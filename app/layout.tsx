@@ -16,9 +16,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "BEHELIT | The Future of Digital Experience",
+  title: "Behelit | Independent apps, built and shipped",
   description:
-    "Behelit is a laboratory of digital craftsmanship — mobile monoliths blending avant-garde intensity with precision engineering.",
+    "Behelit is a one-person studio—original apps, crafted end to end. Including Soulen, an AI dream library.",
 };
 
 export default function RootLayout({

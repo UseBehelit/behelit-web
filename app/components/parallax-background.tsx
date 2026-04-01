@@ -2,6 +2,7 @@
 
 import Image, { type StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
+import { StarfieldCanvas } from "./starfield-canvas";
 
 const MAX_SHIFT_PX = 56;
 const PARALLAX = 0.045;
@@ -59,7 +60,7 @@ export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
           className="absolute inset-x-0 top-[-6vh] h-[112vh] [will-change:transform]"
           style={{ transform: `translateY(${shift}px)` }}
         >
-          <div className="relative h-full w-full">
+          <div className="relative h-full w-full min-h-0">
             <Image
               src={src}
               alt=""
@@ -69,6 +70,7 @@ export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
               sizes="100vw"
               className="object-cover object-center"
             />
+            <StarfieldCanvas reducedMotion={reduceMotion} />
           </div>
         </div>
       </div>

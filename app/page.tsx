@@ -7,7 +7,7 @@ import siteBg from "./bg.png";
 
 function ManifestoCardImage({ src }: { src: typeof behelitBlack }) {
   return (
-    <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10">
+    <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out motion-reduce:duration-200 group-hover:opacity-[0.12]">
       <Image
         src={src}
         alt=""
@@ -61,20 +61,19 @@ export default function Home() {
               </div>
 
               <h1 className="mb-12 font-headline text-5xl font-extralight leading-[1.1] tracking-[-0.03em] text-on-surface md:text-8xl">
-                Defining the <br />
+                One studio. <br />
                 <span className="font-medium italic tracking-tight text-secondary">
-                  Future
+                  Whole products.
                 </span>{" "}
-                <span className="font-light opacity-60">of</span> <br />
+                <br />
                 <span className="mt-4 block font-normal uppercase tracking-widest text-4xl md:text-6xl">
-                  Digital Experience
+                  Spark to ship
                 </span>
               </h1>
 
               <p className="mb-10 max-w-lg font-body text-lg leading-relaxed text-on-surface-variant">
-                Behelit is a laboratory of digital craftsmanship, blending the
-                raw intensity of avant-garde art with precision engineering to
-                create mobile monoliths.
+                Small-batch software—built with intent, released when it earns
+                the room.
               </p>
 
               <div className="flex gap-6">
@@ -82,7 +81,7 @@ export default function Home() {
                   href="#manifesto"
                   className="border border-secondary px-10 py-4 text-sm font-bold tracking-widest text-secondary transition-all duration-500 hover:bg-secondary hover:text-on-secondary"
                 >
-                  OUR PHILOSOPHY
+                  HOW WE WORK
                 </a>
               </div>
             </div>
@@ -96,7 +95,7 @@ export default function Home() {
                 <div className="absolute -inset-8 animate-pulse rounded-full border border-secondary/20" />
                 <Image
                   src={soulenLogo}
-                  alt="Soulen app logo"
+                  alt="Soulen — AI dream interpretation"
                   className="h-64 w-64 object-contain drop-shadow-[0_0_50px_rgba(233,195,73,0.3)] md:h-80 md:w-80"
                   sizes="320px"
                 />
@@ -119,38 +118,38 @@ export default function Home() {
               </div>
 
               <h3 className="mb-12 font-body text-2xl italic text-outline">
-                The vessel for digital consciousness.
+                Your dreams—interpreted, analyzed, imagined.
               </h3>
 
               <div className="mt-20 grid grid-cols-1 gap-12 text-left md:grid-cols-3">
                 <div className="space-y-4">
                   <div className="mb-4 h-px w-8 bg-primary" />
                   <h4 className="font-headline text-xl text-on-surface">
-                    Asymmetric Flow
+                    A living library
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Breaking the conventional grid for a more organic navigation
-                    experience.
+                    Log what you remember; keep a private thread of nights worth
+                    returning to—not scattered notes, one coherent archive.
                   </p>
                 </div>
                 <div className="space-y-4">
                   <div className="mb-4 h-px w-8 bg-secondary" />
                   <h4 className="font-headline text-xl text-on-surface">
-                    Neural Feedback
+                    AI-guided reading
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Haptic responses tuned to interaction rhythm, creating
-                    digital weight.
+                    Layered interpretation with context: symbols, mood, and
+                    narrative—assisted, never generic.
                   </p>
                 </div>
                 <div className="space-y-4">
                   <div className="mb-4 h-px w-8 bg-outline" />
                   <h4 className="font-headline text-xl text-on-surface">
-                    Hyper-Dark
+                    Text & image
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Optimized for low-light depth, maximizing atmospheric
-                    tension.
+                    Turn insight into words and visuals you can save or share—reflections
+                    shaped from each session.
                   </p>
                 </div>
               </div>
@@ -160,7 +159,7 @@ export default function Home() {
                 className="group mt-16 inline-flex items-center gap-4 border-b border-secondary/0 py-2 transition-all hover:border-secondary"
               >
                 <span className="font-label text-sm font-bold tracking-[0.3em] text-secondary">
-                  INITIATE CONNECTION
+                  RELEASE UPDATES
                 </span>
                 <svg
                   className="h-6 w-6 shrink-0 text-secondary transition-transform group-hover:translate-x-2"
@@ -187,18 +186,18 @@ export default function Home() {
             <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
               <div className="max-w-2xl">
                 <span className="mb-4 block font-label text-xs uppercase tracking-[0.5em] text-outline">
-                  The Behelit Manifesto
+                  Principles
                 </span>
                 <h2 className="font-headline text-5xl font-extrabold uppercase tracking-tighter text-on-surface md:text-7xl">
-                  WE BUILD <br />
+                  WE SHIP <br />
                   <span className="bg-primary px-4 text-primary-container">
-                    MONOLITHS.
+                    WHAT WE OWN.
                   </span>
                 </h2>
               </div>
               <p className="max-w-sm text-sm font-light italic text-on-surface-variant">
-                &ldquo;In the void between the code and the user, we find the
-                soul of the machine.&rdquo;
+                &ldquo;One thread from first sketch to last pixel—clarity over
+                noise, finish over fanfare.&rdquo;
               </p>
             </div>
 
@@ -210,11 +209,11 @@ export default function Home() {
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Purity
+                    Authorship
                   </h5>
                   <p className="text-sm font-light text-on-surface-variant">
-                    Eliminating the noise. We believe every pixel must serve the
-                    narrative or be discarded without mercy.
+                    Every product is authored in-house—design, code, and
+                    identity stay in one pair of hands, start to finish.
                   </p>
                 </div>
               </div>
@@ -226,11 +225,11 @@ export default function Home() {
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Intensity
+                    Release
                   </h5>
                   <p className="text-sm font-light text-on-surface-variant">
-                    Software should be felt. Our interfaces demand attention
-                    through atmospheric tension and bold contrast.
+                    Shipping matters—out in the wild, on real devices, with
+                    feedback that sharpens what comes next.
                   </p>
                 </div>
               </div>
@@ -242,11 +241,11 @@ export default function Home() {
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Permanence
+                    Restraint
                   </h5>
                   <p className="text-sm font-light text-on-surface-variant">
-                    We do not chase trends. We create digital artifacts designed
-                    to endure past the current zeitgeist.
+                    Fewer releases, deeper polish. We prefer finished work over
+                    endless roadmaps and borrowed aesthetics.
                   </p>
                 </div>
               </div>
@@ -261,11 +260,10 @@ export default function Home() {
           >
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-6 font-headline text-4xl font-bold text-on-surface md:text-5xl">
-                JOIN THE ARCHIVE
+                NEW RELEASES
               </h2>
               <p className="mb-12 font-light text-on-surface-variant">
-                Receive exclusive insights into our development process and
-                early access to upcoming editions.
+                Be first when something ships—launch notes only, no noise.
               </p>
               <form
                 className="group mx-auto flex max-w-lg flex-col gap-0 border-b border-outline-variant transition-colors focus-within:border-secondary md:flex-row"
@@ -302,7 +300,7 @@ export default function Home() {
                   |
                 </span>
                 <p className="text-center font-body text-[10px] font-light tracking-[0.2em] text-[#444748] md:text-left">
-                  © {year} THE BEHELIT EDITORIAL. ALL RIGHTS RESERVED.
+                  © {year} BEHELIT. INDEPENDENT SOFTWARE.
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-8 md:gap-12">
