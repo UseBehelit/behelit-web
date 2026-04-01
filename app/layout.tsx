@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${newsreader.variable} ${manrope.variable} h-full antialiased`}
+      className={`dark ${newsreader.variable} ${manrope.variable} h-full snap-y snap-mandatory scroll-smooth scroll-pt-[4.75rem] antialiased`}
     >
-      <body className="font-body min-h-full selection:bg-primary selection:text-primary-container">
+      <body className="relative min-h-full font-body selection:bg-primary selection:text-primary-container">
         {children}
       </body>
     </html>

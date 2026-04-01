@@ -1,7 +1,9 @@
 import Image from "next/image";
 import behelitBlack from "./behelit_black.png";
 import behelitLogo from "./behelit_logo.png";
+import { ParallaxBackground } from "./components/parallax-background";
 import soulenLogo from "./soulen.png";
+import siteBg from "./bg.png";
 
 function ManifestoCardImage({ src }: { src: typeof behelitBlack }) {
   return (
@@ -22,43 +24,57 @@ export default function Home() {
 
   return (
     <>
-      <nav className="pointer-events-none fixed top-0 z-50 flex h-24 w-full items-center justify-center">
-        <div className="pointer-events-auto">
+      <nav className="pointer-events-none fixed left-0 right-0 top-5 z-50 flex justify-center md:top-6">
+        <a
+          href="#top"
+          aria-label="Back to top"
+          className="pointer-events-auto rounded-full p-1.5 shadow-[0_2px_14px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.035)] ring-1 ring-white/[0.04] backdrop-blur-[2px] transition-all duration-700 [background:radial-gradient(circle_at_50%_42%,rgba(55,55,55,0.28)_0%,rgba(28,27,27,0.1)_52%,transparent_74%)] hover:scale-105 hover:shadow-[0_3px_18px_rgba(0,0,0,0.22)]"
+        >
           <Image
             src={behelitLogo}
             alt="Behelit"
-            className="h-12 w-auto invert brightness-200"
+            className="h-9 w-auto brightness-200 drop-shadow-[0_1px_5px_rgba(0,0,0,0.22)]"
             priority
-            sizes="200px"
+            sizes="120px"
           />
-        </div>
+        </a>
       </nav>
 
-      <main>
-        <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-surface px-12">
-          <div className="pointer-events-none absolute inset-0 z-0 opacity-10">
+      <ParallaxBackground src={siteBg} />
+
+      <main className="relative z-10">
+        <section
+          id="top"
+          className="snap-page relative flex min-h-dvh snap-start flex-col justify-center overflow-hidden bg-transparent"
+        >
+          <div className="pointer-events-none absolute inset-0 z-[1] opacity-10">
             <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary blur-[160px]" />
           </div>
 
-          <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-12">
-            <div className="md:col-span-7">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6">
+            <div className="max-w-4xl">
               <div className="mb-8 flex items-center gap-4">
                 <div className="h-[2px] w-12 bg-primary" />
                 <span className="font-label text-xs uppercase tracking-[0.4em] text-primary">
-                  Est. MMXXIV
+                  Est. MMXXVI
                 </span>
               </div>
 
-              <h1 className="hero-title-shadow mb-8 font-headline text-6xl font-bold leading-tight tracking-tighter md:text-8xl">
-                DEFINING THE <br />
-                <span className="italic text-secondary">FUTURE</span> OF DIGITAL <br />
-                EXPERIENCE.
+              <h1 className="mb-12 font-headline text-5xl font-extralight leading-[1.1] tracking-[-0.03em] text-on-surface md:text-8xl">
+                Defining the <br />
+                <span className="font-medium italic tracking-tight text-secondary">
+                  Future
+                </span>{" "}
+                <span className="font-light opacity-60">of</span> <br />
+                <span className="mt-4 block font-normal uppercase tracking-widest text-4xl md:text-6xl">
+                  Digital Experience
+                </span>
               </h1>
 
               <p className="mb-10 max-w-lg font-body text-lg leading-relaxed text-on-surface-variant">
-                Behelit is a laboratory of digital craftsmanship, blending the raw
-                intensity of avant-garde art with precision engineering to create
-                mobile monoliths.
+                Behelit is a laboratory of digital craftsmanship, blending the
+                raw intensity of avant-garde art with precision engineering to
+                create mobile monoliths.
               </p>
 
               <div className="flex gap-6">
@@ -70,27 +86,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-
-            <div className="relative flex justify-center md:col-span-5">
-              <div className="relative flex aspect-square w-full max-w-md items-center justify-center border border-outline-variant/15 bg-surface-container-lowest p-12">
-                <Image
-                  src={behelitBlack}
-                  alt="Behelit monolith emblem"
-                  className="h-auto w-full grayscale contrast-125"
-                  sizes="(max-width: 768px) 100vw, 400px"
-                />
-                <div className="absolute -bottom-6 -right-6 w-32 border border-primary/20 bg-primary-container p-6">
-                  <span className="font-headline text-4xl font-bold text-primary">
-                    01
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-surface-container-lowest px-12 py-32">
-          <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <section className="snap-page relative flex min-h-dvh snap-start items-center justify-center overflow-hidden py-32">
+          <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
             <div className="mb-16 flex justify-center">
               <div className="relative inline-block">
                 <div className="absolute -inset-8 animate-pulse rounded-full border border-secondary/20" />
@@ -139,8 +139,8 @@ export default function Home() {
                     Neural Feedback
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Haptic responses tuned to interaction rhythm, creating digital
-                    weight.
+                    Haptic responses tuned to interaction rhythm, creating
+                    digital weight.
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -149,14 +149,15 @@ export default function Home() {
                     Hyper-Dark
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Optimized for low-light depth, maximizing atmospheric tension.
+                    Optimized for low-light depth, maximizing atmospheric
+                    tension.
                   </p>
                 </div>
               </div>
 
               <a
                 href="#archive"
-                className="group mt-16 inline-flex items-center gap-4 border-b border-transparent py-2 transition-all hover:border-secondary"
+                className="group mt-16 inline-flex items-center gap-4 border-b border-secondary/0 py-2 transition-all hover:border-secondary"
               >
                 <span className="font-label text-sm font-bold tracking-[0.3em] text-secondary">
                   INITIATE CONNECTION
@@ -180,9 +181,9 @@ export default function Home() {
 
         <section
           id="manifesto"
-          className="flex min-h-screen flex-col justify-center bg-surface px-12 py-32"
+          className="snap-page relative flex min-h-dvh snap-start flex-col justify-center overflow-hidden px-12 py-32"
         >
-          <div className="mx-auto w-full max-w-7xl">
+          <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
               <div className="max-w-2xl">
                 <span className="mb-4 block font-label text-xs uppercase tracking-[0.5em] text-outline">
@@ -190,12 +191,14 @@ export default function Home() {
                 </span>
                 <h2 className="font-headline text-5xl font-extrabold uppercase tracking-tighter text-on-surface md:text-7xl">
                   WE BUILD <br />
-                  <span className="bg-primary px-4 text-primary-container">MONOLITHS.</span>
+                  <span className="bg-primary px-4 text-primary-container">
+                    MONOLITHS.
+                  </span>
                 </h2>
               </div>
               <p className="max-w-sm text-sm font-light italic text-on-surface-variant">
-                &ldquo;In the void between the code and the user, we find the soul of
-                the machine.&rdquo;
+                &ldquo;In the void between the code and the user, we find the
+                soul of the machine.&rdquo;
               </p>
             </div>
 
@@ -203,7 +206,7 @@ export default function Home() {
               <div className="group relative flex aspect-[3/4] flex-col justify-between overflow-hidden bg-surface-container-low p-10">
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-secondary">
-                  01
+                  I
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
@@ -219,15 +222,15 @@ export default function Home() {
               <div className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-high p-10">
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-primary">
-                  02
+                  II
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
                     Intensity
                   </h5>
                   <p className="text-sm font-light text-on-surface-variant">
-                    Software should be felt. Our interfaces demand attention through
-                    atmospheric tension and bold contrast.
+                    Software should be felt. Our interfaces demand attention
+                    through atmospheric tension and bold contrast.
                   </p>
                 </div>
               </div>
@@ -235,15 +238,15 @@ export default function Home() {
               <div className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-highest p-10">
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-on-surface">
-                  03
+                  III
                 </span>
                 <div className="relative z-[1]">
                   <h5 className="mb-4 font-headline text-2xl text-on-surface">
                     Permanence
                   </h5>
                   <p className="text-sm font-light text-on-surface-variant">
-                    We do not chase trends. We create digital artifacts designed to
-                    endure past the current zeitgeist.
+                    We do not chase trends. We create digital artifacts designed
+                    to endure past the current zeitgeist.
                   </p>
                 </div>
               </div>
@@ -251,67 +254,74 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="archive"
-          className="bg-surface-container-lowest px-12 py-40 text-center"
-        >
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-6 font-headline text-4xl font-bold text-on-surface md:text-5xl">
-              JOIN THE ARCHIVE
-            </h2>
-            <p className="mb-12 font-light text-on-surface-variant">
-              Receive exclusive insights into our development process and early
-              access to upcoming editions.
-            </p>
-            <form
-              className="group mx-auto flex max-w-lg flex-col gap-0 border-b border-outline-variant transition-colors focus-within:border-secondary md:flex-row"
-              action="#"
-              method="post"
-            >
-              <input
-                className="flex-grow border-none bg-transparent py-4 font-label text-sm uppercase tracking-widest text-on-surface placeholder:text-on-surface-variant/60 focus:ring-0"
-                placeholder="YOUR EMAIL ADDRESS"
-                type="email"
-                name="email"
-                autoComplete="email"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] text-secondary transition-colors hover:bg-surface-container-high"
+        <div className="section-bg-archive snap-page flex min-h-dvh snap-start flex-col">
+          <section
+            id="archive"
+            className="flex flex-1 flex-col justify-center px-12 py-24 text-center md:py-32"
+          >
+            <div className="mx-auto max-w-3xl">
+              <h2 className="mb-6 font-headline text-4xl font-bold text-on-surface md:text-5xl">
+                JOIN THE ARCHIVE
+              </h2>
+              <p className="mb-12 font-light text-on-surface-variant">
+                Receive exclusive insights into our development process and
+                early access to upcoming editions.
+              </p>
+              <form
+                className="group mx-auto flex max-w-lg flex-col gap-0 border-b border-outline-variant transition-colors focus-within:border-secondary md:flex-row"
+                action="#"
+                method="post"
               >
-                SUBSCRIBE
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer className="w-full bg-[#0e0e0e] px-12 py-16">
-        <div className="flex flex-col items-center justify-between gap-8 border-t border-[#444748]/15 pt-12 md:flex-row">
-          <div className="flex flex-col items-center gap-6 md:flex-row">
-            <span className="font-headline text-xl text-[#e5e2e1]">BEHELIT</span>
-            <span className="hidden font-body text-[10px] font-light tracking-[0.2em] text-[#444748] md:block">
-              |
-            </span>
-            <p className="text-center font-body text-[10px] font-light tracking-[0.2em] text-[#444748] md:text-left">
-              © {year} THE BEHELIT EDITORIAL. ALL RIGHTS RESERVED.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {(["PRIVACY", "TERMS", "CONTACT", "INSTAGRAM"] as const).map(
-              (label) => (
-                <a
-                  key={label}
-                  href="#"
-                  className="font-body text-[10px] font-light tracking-[0.2em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
+                <input
+                  className="flex-grow border-none bg-transparent py-4 font-label text-sm uppercase tracking-widest text-on-surface placeholder:text-on-surface-variant/60 focus:ring-0"
+                  placeholder="YOUR EMAIL ADDRESS"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] text-secondary transition-colors hover:bg-surface-container-high"
                 >
-                  {label}
-                </a>
-              ),
-            )}
-          </div>
+                  SUBSCRIBE
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <footer className="w-full shrink-0 bg-[#0e0e0e] px-12 py-16">
+            <div className="flex flex-col items-center justify-between gap-8 border-t border-[#444748]/15 pt-12 md:flex-row">
+              <div className="flex flex-col items-center gap-6 md:flex-row">
+                <Image
+                  src={behelitLogo}
+                  alt="Behelit"
+                  className="h-8 w-auto brightness-150"
+                  sizes="120px"
+                />
+                <span className="hidden font-body text-[10px] font-light tracking-[0.2em] text-[#444748] md:block">
+                  |
+                </span>
+                <p className="text-center font-body text-[10px] font-light tracking-[0.2em] text-[#444748] md:text-left">
+                  © {year} THE BEHELIT EDITORIAL. ALL RIGHTS RESERVED.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+                {(["PRIVACY", "TERMS", "CONTACT", "INSTAGRAM"] as const).map(
+                  (label) => (
+                    <a
+                      key={label}
+                      href="#"
+                      className="font-body text-[10px] font-light tracking-[0.2em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
+                    >
+                      {label}
+                    </a>
+                  ),
+                )}
+              </div>
+            </div>
+          </footer>
         </div>
-      </footer>
+      </main>
     </>
   );
 }

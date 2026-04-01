@@ -58,18 +58,45 @@
   --radius: 0px;
 }
 
-body {
-  background-color: #131313;
-  color: #e5e2e1;
+html {
   scroll-behavior: smooth;
+  background-color: #0e0e0e;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: #0e0e0e;
+  color: #e5e2e1;
   font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+
+/* Archive + footer block tone (no full-bleed photo in design) */
+.section-bg-archive {
+  background: linear-gradient(
+    180deg,
+    #0e0e0e 0%,
+    #0e0e0e 72%,
+    #0d0d0d 88%,
+    #0c0c0c 100%
+  );
+}
+
+/* Full-page scroll snap targets (stop on each screen, don’t skip) */
+@media (prefers-reduced-motion: no-preference) {
+  .snap-page {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {
   background-color: #ffb3b0;
   color: #200002;
-}
-
-.hero-title-shadow {
-  text-shadow: 0 0 40px rgba(255, 179, 176, 0.1);
 }
