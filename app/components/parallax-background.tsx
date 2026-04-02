@@ -4,12 +4,12 @@ import Image, { type StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 import { StarfieldCanvas } from "./starfield-canvas";
 
-/** Stronger scroll response; clamp avoids runaway on long pages */
-const MAX_SHIFT_PX = 100;
-const PARALLAX = 0.092;
-/** Taller strip so larger shifts don’t reveal edges (keeps image sharp vs. 100vw) */
-const STRIP_TOP_VH = -12;
-const STRIP_HEIGHT_VH = 124;
+/** Subtle parallax — smaller shift = less edge gap risk */
+const MAX_SHIFT_PX = 52;
+const PARALLAX = 0.048;
+/** Strip bleed matches modest shift (still ~100vw image) */
+const STRIP_TOP_VH = -9;
+const STRIP_HEIGHT_VH = 118;
 
 type ParallaxBackgroundProps = Readonly<{
   src: string | StaticImageData;
@@ -22,8 +22,7 @@ function clampShift(scrollY: number): number {
 }
 
 /**
- * Viewport-sized texture + extra vertical bleed (~24vh) for a stronger parallax
- * shift without exposing edges. Image stays ~100vw for sharpness.
+ * Viewport-sized texture + modest vertical bleed for light parallax.
  */
 export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
   const [scrollY, setScrollY] = useState(0);

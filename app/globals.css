@@ -120,6 +120,30 @@ body::after {
     0 32px 64px -36px rgba(0, 0, 0, 0.58);
 }
 
+/* Touch / narrow: static frame; same on :hover so sticky-tap doesn’t jump */
+@media (max-width: 768px) {
+  .manifesto-card-frame--secondary,
+  .manifesto-card-frame--secondary:hover {
+    box-shadow:
+      inset 0 0 0 1px rgba(233, 195, 73, 0.28),
+      0 22px 48px -34px rgba(0, 0, 0, 0.52);
+  }
+
+  .manifesto-card-frame--primary,
+  .manifesto-card-frame--primary:hover {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 179, 176, 0.24),
+      0 22px 48px -34px rgba(0, 0, 0, 0.52);
+  }
+
+  .manifesto-card-frame--neutral,
+  .manifesto-card-frame--neutral:hover {
+    box-shadow:
+      inset 0 0 0 1px rgba(142, 145, 146, 0.22),
+      0 22px 48px -34px rgba(0, 0, 0, 0.5);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

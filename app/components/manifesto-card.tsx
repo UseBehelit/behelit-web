@@ -39,39 +39,41 @@ export function ManifestoCard({
   return (
     <div
       className={[
-        "group/manifesto relative flex aspect-[3/4] flex-col justify-between overflow-hidden p-10",
+        "group/manifesto relative flex flex-col justify-between overflow-hidden p-8 md:aspect-[3/4] md:p-10",
+        "min-h-[300px] max-md:aspect-auto max-md:touch-manipulation max-md:active:scale-[0.99]",
         "transition-[transform,box-shadow] duration-500 ease-out motion-reduce:transition-none",
-        "hover:-translate-y-1 motion-reduce:hover:translate-y-0",
+        "md:hover:-translate-y-1 motion-reduce:md:hover:translate-y-0",
         bgClass,
         "manifesto-card-frame",
         `manifesto-card-frame--${accent}`,
       ].join(" ")}
     >
-      {/* Top line — draws on hover */}
+      {/* Top line — full width on touch; draws on hover @ md+ */}
       <div
         className={[
-          "pointer-events-none absolute left-0 top-0 z-[2] h-px w-0 bg-gradient-to-r transition-[width] duration-700 ease-out group-hover/manifesto:w-full motion-reduce:transition-none motion-reduce:group-hover/manifesto:w-full",
+          "pointer-events-none absolute left-0 top-0 z-[2] h-px w-full bg-gradient-to-r md:w-0 md:transition-[width] md:duration-700 md:ease-out md:group-hover/manifesto:w-full motion-reduce:md:transition-none motion-reduce:md:group-hover/manifesto:w-full",
+          "max-md:opacity-90",
           accentLine[accent],
         ].join(" ")}
         aria-hidden
       />
 
-      {/* Hover gradient wash from bottom */}
+      {/* Gradient wash — always soft on mobile; full on hover desktop */}
       <div
         className={[
-          "pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[45%] bg-gradient-to-t opacity-0 transition-opacity duration-500 group-hover/manifesto:opacity-100 motion-reduce:group-hover/manifesto:opacity-0",
-          accent === "secondary" && "from-secondary/[0.12] to-transparent",
-          accent === "primary" && "from-primary/[0.1] to-transparent",
+          "pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[48%] bg-gradient-to-t transition-opacity duration-500 max-md:opacity-100 md:opacity-0 md:group-hover/manifesto:opacity-100 motion-reduce:md:group-hover/manifesto:opacity-0",
+          accent === "secondary" && "from-secondary/[0.16] to-transparent",
+          accent === "primary" && "from-primary/[0.13] to-transparent",
           accent === "neutral" &&
-            "from-white/[0.06] via-transparent to-transparent",
+            "from-white/[0.07] via-transparent to-transparent",
         ]
           .filter(Boolean)
           .join(" ")}
         aria-hidden
       />
 
-      {/* Background image — existing behavior, slightly stronger on hover */}
-      <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out motion-reduce:duration-200 group-hover/manifesto:opacity-[0.14]">
+      {/* Background image — visible on mobile; stronger on hover @ md+ */}
+      <div className="absolute inset-0 transition-opacity duration-700 ease-in-out motion-reduce:duration-200 max-md:opacity-[0.11] md:opacity-0 md:group-hover/manifesto:opacity-[0.14]">
         <Image
           src={imageSrc}
           alt=""
@@ -85,8 +87,8 @@ export function ManifestoCard({
         className={[
           "relative z-[3] inline-flex font-headline text-3xl font-bold tabular-nums transition-[transform,text-shadow] duration-500",
           romanColor[accent],
-          "group-hover/manifesto:scale-105 motion-reduce:group-hover/manifesto:scale-100",
-          "drop-shadow-[0_0_0_rgba(0,0,0,0)] group-hover/manifesto:drop-shadow-[0_2px_18px_rgba(0,0,0,0.35)]",
+          "max-md:drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)] max-md:scale-100",
+          "md:drop-shadow-[0_0_0_rgba(0,0,0,0)] md:group-hover/manifesto:scale-105 md:group-hover/manifesto:drop-shadow-[0_2px_18px_rgba(0,0,0,0.35)] motion-reduce:md:group-hover/manifesto:scale-100",
         ].join(" ")}
       >
         {roman}
@@ -95,7 +97,7 @@ export function ManifestoCard({
       <div className="relative z-[3]">
         <div
           className={[
-            "mb-3 h-px w-8 origin-left scale-x-100 transition-transform duration-500 group-hover/manifesto:scale-x-125",
+            "mb-3 h-px origin-left transition-transform duration-500 max-md:w-10 max-md:scale-x-110 md:w-8 md:scale-x-100 md:group-hover/manifesto:scale-x-125",
             accent === "secondary" && "bg-secondary/90",
             accent === "primary" && "bg-primary/90",
             accent === "neutral" && "bg-outline/80",

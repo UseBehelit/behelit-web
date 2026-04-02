@@ -178,7 +178,7 @@ export default function Home() {
               </p>
             </RevealOnScroll>
 
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-1">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-1">
               <RevealOnScroll delayMs={0} className="min-h-0">
                 <ManifestoCard
                   roman="I"
