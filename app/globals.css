@@ -81,17 +81,8 @@ body {
   );
 }
 
-/* Full-page scroll snap targets (stop on each screen, don’t skip) */
-@media (prefers-reduced-motion: no-preference) {
-  .snap-page {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-snap-type: none;
     scroll-behavior: auto;
   }
 }

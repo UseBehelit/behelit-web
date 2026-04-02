@@ -45,7 +45,7 @@ export default function Home() {
       <main className="relative z-10">
         <section
           id="top"
-          className="snap-page relative flex min-h-dvh snap-start flex-col justify-center overflow-hidden bg-transparent"
+          className="relative flex min-h-dvh flex-col justify-center overflow-hidden bg-transparent"
         >
           <div className="pointer-events-none absolute inset-0 z-[1] opacity-10">
             <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary blur-[160px]" />
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="snap-page relative flex min-h-dvh snap-start items-center justify-center overflow-hidden py-32">
+        <section className="relative flex min-h-dvh items-center justify-center overflow-hidden py-32">
           <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
             <div className="mb-16 flex justify-center">
               <div className="relative inline-block">
@@ -180,7 +180,7 @@ export default function Home() {
 
         <section
           id="manifesto"
-          className="snap-page relative flex min-h-dvh snap-start flex-col justify-center overflow-hidden px-12 py-32"
+          className="relative flex min-h-dvh flex-col justify-center overflow-hidden px-12 py-32"
         >
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -253,7 +253,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="section-bg-archive snap-page flex min-h-dvh snap-start flex-col">
+        <div className="section-bg-archive flex min-h-dvh flex-col">
           <section
             id="archive"
             className="flex flex-1 flex-col justify-center px-12 py-24 text-center md:py-32"
