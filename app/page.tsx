@@ -1,13 +1,13 @@
 import Image from "next/image";
 import behelitBlack from "./behelit_black.png";
 import behelitLogo from "./behelit_logo.png";
+import siteBg from "./bg.png";
 import { ManifestoCard } from "./components/manifesto-card";
 import { ParallaxBackground } from "./components/parallax-background";
 import { RevealOnScroll } from "./components/reveal-on-scroll";
 import { ScrollProgress } from "./components/scroll-progress";
 import { SiteNav } from "./components/site-nav";
 import soulenLogo from "./soulen.png";
-import siteBg from "./bg.png";
 
 export default function Home() {
   const year = new Date().getFullYear();
@@ -38,7 +38,7 @@ export default function Home() {
               </div>
 
               <h1 className="mb-10 max-w-[22ch] font-headline text-5xl font-extralight leading-[1.08] tracking-[-0.03em] text-on-surface md:mb-14 md:max-w-none md:text-8xl md:leading-[1.06]">
-                One studio. <br />
+                Ben yaptım tabii beril kim yapcak baska. <br />
                 <span className="font-medium italic tracking-tight text-secondary">
                   Whole products.
                 </span>{" "}
@@ -125,8 +125,8 @@ export default function Home() {
                     Text & image
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Turn insight into words and visuals you can save or share—reflections
-                    shaped from each session.
+                    Turn insight into words and visuals you can save or
+                    share—reflections shaped from each session.
                   </p>
                 </div>
               </div>
