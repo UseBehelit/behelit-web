@@ -16,7 +16,8 @@ type ParallaxBackgroundProps = Readonly<{
 }>;
 
 function clampShift(scrollY: number): number {
-  const raw = -scrollY * PARALLAX;
+  const y = Math.max(0, scrollY);
+  const raw = -y * PARALLAX;
   return Math.max(-MAX_SHIFT_PX, Math.min(MAX_SHIFT_PX, raw));
 }
 
@@ -27,6 +28,8 @@ function clampShift(scrollY: number): number {
 export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
   const [scrollY, setScrollY] = useState(0);
   const [reduceMotion, setReduceMotion] = useState(false);
+  /** Parallax + dim shift fight iOS/Android URL bar & rubber-band; disable on narrow viewports */
+  const [parallaxOff, setParallaxOff] = useState(false);
 
   useEffect(() => {
     const mq = globalThis.matchMedia("(prefers-reduced-motion: reduce)");
@@ -37,11 +40,21 @@ export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
   }, []);
 
   useEffect(() => {
-    if (reduceMotion) return;
+    const mq = globalThis.matchMedia("(max-width: 768px)");
+    const update = () => setParallaxOff(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion || parallaxOff) return;
     let raf = 0;
     const onScroll = () => {
       cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => setScrollY(globalThis.scrollY));
+      raf = requestAnimationFrame(() =>
+        setScrollY(Math.max(0, globalThis.scrollY)),
+      );
     };
     onScroll();
     globalThis.addEventListener("scroll", onScroll, { passive: true });
@@ -49,16 +62,16 @@ export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
       cancelAnimationFrame(raf);
       globalThis.removeEventListener("scroll", onScroll);
     };
-  }, [reduceMotion]);
+  }, [reduceMotion, parallaxOff]);
 
-  const shift = reduceMotion ? 0 : clampShift(scrollY);
-  /** Subtle counter-shift on overlay so fg/bg separation reads clearer */
-  const dimShift = reduceMotion ? 0 : scrollY * 0.018;
+  const scrollSafe = Math.max(0, scrollY);
+  const useParallax = !reduceMotion && !parallaxOff;
+  const shift = useParallax ? clampShift(scrollSafe) : 0;
 
   return (
     <>
       <div
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#0e0e0e]"
+        className="pointer-events-none fixed inset-0 z-0 min-h-dvh w-full overflow-hidden bg-[#0e0e0e]"
         aria-hidden
       >
         <div
@@ -84,12 +97,7 @@ export function ParallaxBackground({ src }: ParallaxBackgroundProps) {
         </div>
       </div>
       <div
-        className="pointer-events-none fixed inset-0 z-[1] bg-gradient-to-b from-black/45 via-[#131313]/50 to-black/55 [will-change:transform]"
-        style={
-          reduceMotion
-            ? undefined
-            : { transform: `translateY(${dimShift}px)` }
-        }
+        className="pointer-events-none fixed inset-0 z-[1] min-h-dvh w-full bg-gradient-to-b from-black/45 via-[#131313]/50 to-black/55"
         aria-hidden
       />
     </>

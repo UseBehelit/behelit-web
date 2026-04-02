@@ -61,6 +61,7 @@
 html {
   scroll-behavior: smooth;
   background-color: #0e0e0e;
+  overflow-x: hidden;
 }
 
 body {
@@ -68,6 +69,7 @@ body {
   background-color: #0e0e0e;
   color: #e5e2e1;
   font-family: var(--font-manrope), "Manrope", sans-serif;
+  overflow-x: hidden;
 }
 
 /* Subtle film grain — premium depth without perf hit */
@@ -93,6 +95,31 @@ body::after {
   );
 }
 
+/* Manifesto principle cards — inset border + glow on hover */
+.manifesto-card-frame {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.055),
+    0 20px 48px -36px rgba(0, 0, 0, 0.45);
+}
+
+.manifesto-card-frame--secondary:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(233, 195, 73, 0.42),
+    0 32px 64px -36px rgba(0, 0, 0, 0.6);
+}
+
+.manifesto-card-frame--primary:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 179, 176, 0.38),
+    0 32px 64px -36px rgba(0, 0, 0, 0.6);
+}
+
+.manifesto-card-frame--neutral:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(142, 145, 146, 0.35),
+    0 32px 64px -36px rgba(0, 0, 0, 0.58);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -100,6 +127,14 @@ body::after {
 
   body::after {
     opacity: 0.02;
+  }
+
+  .manifesto-card-frame--secondary:hover,
+  .manifesto-card-frame--primary:hover,
+  .manifesto-card-frame--neutral:hover {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 20px 48px -36px rgba(0, 0, 0, 0.45);
   }
 }
 

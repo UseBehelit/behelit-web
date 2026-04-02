@@ -1,26 +1,13 @@
 import Image from "next/image";
 import behelitBlack from "./behelit_black.png";
 import behelitLogo from "./behelit_logo.png";
+import { ManifestoCard } from "./components/manifesto-card";
 import { ParallaxBackground } from "./components/parallax-background";
 import { RevealOnScroll } from "./components/reveal-on-scroll";
 import { ScrollProgress } from "./components/scroll-progress";
 import { SiteNav } from "./components/site-nav";
 import soulenLogo from "./soulen.png";
 import siteBg from "./bg.png";
-
-function ManifestoCardImage({ src }: { src: typeof behelitBlack }) {
-  return (
-    <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out motion-reduce:duration-200 group-hover:opacity-[0.12]">
-      <Image
-        src={src}
-        alt=""
-        fill
-        className="object-cover grayscale contrast-125"
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-    </div>
-  );
-}
 
 export default function Home() {
   const year = new Date().getFullYear();
@@ -191,62 +178,44 @@ export default function Home() {
               </p>
             </RevealOnScroll>
 
-            <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
-              <RevealOnScroll
-                delayMs={0}
-                className="group relative flex aspect-[3/4] flex-col justify-between overflow-hidden bg-surface-container-low p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
-              >
-                <ManifestoCardImage src={behelitBlack} />
-                <span className="relative z-[1] font-headline text-3xl font-bold text-secondary">
-                  I
-                </span>
-                <div className="relative z-[1]">
-                  <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Authorship
-                  </h5>
-                  <p className="text-sm font-light text-on-surface-variant">
-                    Every product is authored in-house—design, code, and
-                    identity stay in one pair of hands, start to finish.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-1">
+              <RevealOnScroll delayMs={0} className="min-h-0">
+                <ManifestoCard
+                  roman="I"
+                  title="Authorship"
+                  accent="secondary"
+                  bgClass="bg-surface-container-low"
+                  imageSrc={behelitBlack}
+                >
+                  Every product is authored in-house—design, code, and identity
+                  stay in one pair of hands, start to finish.
+                </ManifestoCard>
               </RevealOnScroll>
 
-              <RevealOnScroll
-                delayMs={90}
-                className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-high p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
-              >
-                <ManifestoCardImage src={behelitBlack} />
-                <span className="relative z-[1] font-headline text-3xl font-bold text-primary">
-                  II
-                </span>
-                <div className="relative z-[1]">
-                  <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Release
-                  </h5>
-                  <p className="text-sm font-light text-on-surface-variant">
-                    Shipping matters—out in the wild, on real devices, with
-                    feedback that sharpens what comes next.
-                  </p>
-                </div>
+              <RevealOnScroll delayMs={90} className="min-h-0">
+                <ManifestoCard
+                  roman="II"
+                  title="Release"
+                  accent="primary"
+                  bgClass="bg-surface-container-high"
+                  imageSrc={behelitBlack}
+                >
+                  Shipping matters—out in the wild, on real devices, with
+                  feedback that sharpens what comes next.
+                </ManifestoCard>
               </RevealOnScroll>
 
-              <RevealOnScroll
-                delayMs={180}
-                className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-highest p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
-              >
-                <ManifestoCardImage src={behelitBlack} />
-                <span className="relative z-[1] font-headline text-3xl font-bold text-on-surface">
-                  III
-                </span>
-                <div className="relative z-[1]">
-                  <h5 className="mb-4 font-headline text-2xl text-on-surface">
-                    Restraint
-                  </h5>
-                  <p className="text-sm font-light text-on-surface-variant">
-                    Fewer releases, deeper polish. We prefer finished work over
-                    endless roadmaps and borrowed aesthetics.
-                  </p>
-                </div>
+              <RevealOnScroll delayMs={180} className="min-h-0">
+                <ManifestoCard
+                  roman="III"
+                  title="Restraint"
+                  accent="neutral"
+                  bgClass="bg-surface-container-highest"
+                  imageSrc={behelitBlack}
+                >
+                  Fewer releases, deeper polish. We prefer finished work over
+                  endless roadmaps and borrowed aesthetics.
+                </ManifestoCard>
               </RevealOnScroll>
             </div>
           </div>
