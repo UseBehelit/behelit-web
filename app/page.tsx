@@ -179,7 +179,10 @@ export default function Home() {
             </RevealOnScroll>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-1">
-              <RevealOnScroll delayMs={0} className="min-h-0">
+              <RevealOnScroll
+                delayMs={0}
+                className="min-h-0 max-md:overflow-hidden max-md:rounded-2xl"
+              >
                 <ManifestoCard
                   roman="I"
                   title="Authorship"
@@ -192,7 +195,10 @@ export default function Home() {
                 </ManifestoCard>
               </RevealOnScroll>
 
-              <RevealOnScroll delayMs={90} className="min-h-0">
+              <RevealOnScroll
+                delayMs={90}
+                className="min-h-0 max-md:overflow-hidden max-md:rounded-2xl"
+              >
                 <ManifestoCard
                   roman="II"
                   title="Release"
@@ -205,7 +211,10 @@ export default function Home() {
                 </ManifestoCard>
               </RevealOnScroll>
 
-              <RevealOnScroll delayMs={180} className="min-h-0">
+              <RevealOnScroll
+                delayMs={180}
+                className="min-h-0 max-md:overflow-hidden max-md:rounded-2xl"
+              >
                 <ManifestoCard
                   roman="III"
                   title="Restraint"

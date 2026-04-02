@@ -40,6 +40,7 @@ export function ManifestoCard({
     <div
       className={[
         "group/manifesto relative flex flex-col justify-between overflow-hidden p-8 md:aspect-[3/4] md:p-10",
+        "max-md:rounded-2xl md:rounded-none",
         "min-h-[300px] max-md:aspect-auto max-md:touch-manipulation max-md:active:scale-[0.99]",
         "transition-[transform,box-shadow] duration-500 ease-out motion-reduce:transition-none",
         "md:hover:-translate-y-1 motion-reduce:md:hover:translate-y-0",
