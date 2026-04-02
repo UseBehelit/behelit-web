@@ -2,6 +2,9 @@ import Image from "next/image";
 import behelitBlack from "./behelit_black.png";
 import behelitLogo from "./behelit_logo.png";
 import { ParallaxBackground } from "./components/parallax-background";
+import { RevealOnScroll } from "./components/reveal-on-scroll";
+import { ScrollProgress } from "./components/scroll-progress";
+import { SiteNav } from "./components/site-nav";
 import soulenLogo from "./soulen.png";
 import siteBg from "./bg.png";
 
@@ -24,21 +27,8 @@ export default function Home() {
 
   return (
     <>
-      <nav className="pointer-events-none fixed left-0 right-0 top-5 z-50 flex justify-center md:top-6">
-        <a
-          href="#top"
-          aria-label="Back to top"
-          className="pointer-events-auto rounded-full p-1.5 shadow-[0_2px_14px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.035)] ring-1 ring-white/[0.04] backdrop-blur-[2px] transition-all duration-700 [background:radial-gradient(circle_at_50%_42%,rgba(55,55,55,0.28)_0%,rgba(28,27,27,0.1)_52%,transparent_74%)] hover:scale-105 hover:shadow-[0_3px_18px_rgba(0,0,0,0.22)]"
-        >
-          <Image
-            src={behelitLogo}
-            alt="Behelit"
-            className="h-9 w-auto brightness-200 drop-shadow-[0_1px_5px_rgba(0,0,0,0.22)]"
-            priority
-            sizes="120px"
-          />
-        </a>
-      </nav>
+      <ScrollProgress />
+      <SiteNav logo={behelitLogo} />
 
       <ParallaxBackground src={siteBg} />
 
@@ -53,25 +43,25 @@ export default function Home() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6">
             <div className="max-w-4xl">
-              <div className="mb-8 flex items-center gap-4">
+              <div className="mb-10 flex items-center gap-4 md:mb-12">
                 <div className="h-[2px] w-12 bg-primary" />
                 <span className="font-label text-xs uppercase tracking-[0.4em] text-primary">
                   Est. MMXXVI
                 </span>
               </div>
 
-              <h1 className="mb-12 font-headline text-5xl font-extralight leading-[1.1] tracking-[-0.03em] text-on-surface md:text-8xl">
+              <h1 className="mb-10 max-w-[22ch] font-headline text-5xl font-extralight leading-[1.08] tracking-[-0.03em] text-on-surface md:mb-14 md:max-w-none md:text-8xl md:leading-[1.06]">
                 One studio. <br />
                 <span className="font-medium italic tracking-tight text-secondary">
                   Whole products.
                 </span>{" "}
                 <br />
-                <span className="mt-4 block font-normal uppercase tracking-widest text-4xl md:text-6xl">
+                <span className="mt-5 block font-normal uppercase tracking-widest text-4xl md:mt-6 md:text-6xl">
                   Spark to ship
                 </span>
               </h1>
 
-              <p className="mb-10 max-w-lg font-body text-lg leading-relaxed text-on-surface-variant">
+              <p className="mb-12 max-w-md font-body text-lg leading-[1.75] text-on-surface-variant md:max-w-lg">
                 Small-batch software—built with intent, released when it earns
                 the room.
               </p>
@@ -79,7 +69,7 @@ export default function Home() {
               <div className="flex gap-6">
                 <a
                   href="#manifesto"
-                  className="border border-secondary px-10 py-4 text-sm font-bold tracking-widest text-secondary transition-all duration-500 hover:bg-secondary hover:text-on-secondary"
+                  className="border border-secondary px-10 py-4 text-sm font-bold tracking-widest text-secondary transition-all duration-300 hover:bg-secondary hover:text-on-secondary active:scale-[0.98] active:brightness-95"
                 >
                   HOW WE WORK
                 </a>
@@ -88,8 +78,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative flex min-h-dvh items-center justify-center overflow-hidden py-32">
-          <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center sm:px-6">
+        <section className="relative flex min-h-dvh flex-col items-center overflow-hidden px-4 pb-24 pt-28 text-center sm:px-6 md:pb-32 md:pt-32">
+          <RevealOnScroll className="relative z-10 w-full max-w-4xl">
             <div className="mb-16 flex justify-center">
               <div className="relative inline-block">
                 <div className="absolute -inset-8 animate-pulse rounded-full border border-secondary/20" />
@@ -122,7 +112,7 @@ export default function Home() {
               </h3>
 
               <div className="mt-20 grid grid-cols-1 gap-12 text-left md:grid-cols-3">
-                <div className="space-y-4">
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
                   <div className="mb-4 h-px w-8 bg-primary" />
                   <h4 className="font-headline text-xl text-on-surface">
                     A living library
@@ -132,7 +122,7 @@ export default function Home() {
                     returning to—not scattered notes, one coherent archive.
                   </p>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
                   <div className="mb-4 h-px w-8 bg-secondary" />
                   <h4 className="font-headline text-xl text-on-surface">
                     AI-guided reading
@@ -142,7 +132,7 @@ export default function Home() {
                     narrative—assisted, never generic.
                   </p>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
                   <div className="mb-4 h-px w-8 bg-outline" />
                   <h4 className="font-headline text-xl text-on-surface">
                     Text & image
@@ -156,7 +146,7 @@ export default function Home() {
 
               <a
                 href="#archive"
-                className="group mt-16 inline-flex items-center gap-4 border-b border-secondary/0 py-2 transition-all hover:border-secondary"
+                className="group mt-16 inline-flex items-center gap-4 border-b border-secondary/0 py-2 transition-all duration-300 hover:border-secondary active:scale-[0.99]"
               >
                 <span className="font-label text-sm font-bold tracking-[0.3em] text-secondary">
                   RELEASE UPDATES
@@ -175,7 +165,7 @@ export default function Home() {
                 </svg>
               </a>
             </div>
-          </div>
+          </RevealOnScroll>
         </section>
 
         <section
@@ -183,7 +173,7 @@ export default function Home() {
           className="relative flex min-h-dvh flex-col justify-center overflow-hidden px-12 py-32"
         >
           <div className="relative z-10 mx-auto w-full max-w-7xl">
-            <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <RevealOnScroll className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
               <div className="max-w-2xl">
                 <span className="mb-4 block font-label text-xs uppercase tracking-[0.5em] text-outline">
                   Principles
@@ -195,14 +185,17 @@ export default function Home() {
                   </span>
                 </h2>
               </div>
-              <p className="max-w-sm text-sm font-light italic text-on-surface-variant">
+              <p className="max-w-sm text-sm font-light italic leading-relaxed text-on-surface-variant">
                 &ldquo;One thread from first sketch to last pixel—clarity over
                 noise, finish over fanfare.&rdquo;
               </p>
-            </div>
+            </RevealOnScroll>
 
             <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
-              <div className="group relative flex aspect-[3/4] flex-col justify-between overflow-hidden bg-surface-container-low p-10">
+              <RevealOnScroll
+                delayMs={0}
+                className="group relative flex aspect-[3/4] flex-col justify-between overflow-hidden bg-surface-container-low p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
+              >
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-secondary">
                   I
@@ -216,9 +209,12 @@ export default function Home() {
                     identity stay in one pair of hands, start to finish.
                   </p>
                 </div>
-              </div>
+              </RevealOnScroll>
 
-              <div className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-high p-10">
+              <RevealOnScroll
+                delayMs={90}
+                className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-high p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
+              >
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-primary">
                   II
@@ -232,9 +228,12 @@ export default function Home() {
                     feedback that sharpens what comes next.
                   </p>
                 </div>
-              </div>
+              </RevealOnScroll>
 
-              <div className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-highest p-10">
+              <RevealOnScroll
+                delayMs={180}
+                className="group relative flex aspect-[3/4] flex-col justify-between bg-surface-container-highest p-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_28px_56px_-32px_rgba(0,0,0,0.65)] motion-reduce:hover:translate-y-0"
+              >
                 <ManifestoCardImage src={behelitBlack} />
                 <span className="relative z-[1] font-headline text-3xl font-bold text-on-surface">
                   III
@@ -248,7 +247,7 @@ export default function Home() {
                     endless roadmaps and borrowed aesthetics.
                   </p>
                 </div>
-              </div>
+              </RevealOnScroll>
             </div>
           </div>
         </section>
@@ -258,20 +257,20 @@ export default function Home() {
             id="archive"
             className="flex flex-1 flex-col justify-center px-12 py-24 text-center md:py-32"
           >
-            <div className="mx-auto max-w-3xl">
+            <RevealOnScroll className="mx-auto max-w-3xl">
               <h2 className="mb-6 font-headline text-4xl font-bold text-on-surface md:text-5xl">
                 NEW RELEASES
               </h2>
-              <p className="mb-12 font-light text-on-surface-variant">
+              <p className="mb-12 font-light leading-relaxed text-on-surface-variant">
                 Be first when something ships—launch notes only, no noise.
               </p>
               <form
-                className="group mx-auto flex max-w-lg flex-col gap-0 border-b border-outline-variant transition-colors focus-within:border-secondary md:flex-row"
+                className="group mx-auto flex max-w-lg flex-col gap-0 border-b border-outline-variant transition-colors duration-300 focus-within:border-secondary md:flex-row"
                 action="#"
                 method="post"
               >
                 <input
-                  className="flex-grow border-none bg-transparent py-4 font-label text-sm uppercase tracking-widest text-on-surface placeholder:text-on-surface-variant/60 focus:ring-0"
+                  className="flex-grow rounded-none border-none bg-transparent py-4 font-label text-sm uppercase tracking-widest text-on-surface transition-all duration-300 placeholder:text-on-surface-variant/60 placeholder:transition-colors focus:bg-white/[0.03] focus:ring-0 focus:placeholder:text-on-surface-variant/35"
                   placeholder="YOUR EMAIL ADDRESS"
                   type="email"
                   name="email"
@@ -279,12 +278,12 @@ export default function Home() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] text-secondary transition-colors hover:bg-surface-container-high"
+                  className="px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] text-secondary transition-all duration-200 hover:bg-surface-container-high active:scale-[0.98]"
                 >
                   SUBSCRIBE
                 </button>
               </form>
-            </div>
+            </RevealOnScroll>
           </section>
 
           <footer className="w-full shrink-0 bg-[#0e0e0e] px-12 py-16">
@@ -309,7 +308,7 @@ export default function Home() {
                     <a
                       key={label}
                       href="#"
-                      className="font-body text-[10px] font-light tracking-[0.2em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
+                      className="font-body text-[10px] font-light tracking-[0.2em] text-[#444748] transition-colors hover:text-[#e5e2e1] active:opacity-70"
                     >
                       {label}
                     </a>

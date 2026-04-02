@@ -70,6 +70,18 @@ body {
   font-family: var(--font-manrope), "Manrope", sans-serif;
 }
 
+/* Subtle film grain — premium depth without perf hit */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
 /* Archive + footer block tone (no full-bleed photo in design) */
 .section-bg-archive {
   background: linear-gradient(
@@ -84,6 +96,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  body::after {
+    opacity: 0.02;
   }
 }
 
