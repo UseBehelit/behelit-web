@@ -1,13 +1,14 @@
 import Image from "next/image";
 import behelitBlack from "./behelit_black.png";
 import behelitLogo from "./behelit_logo.png";
+import siteBg from "./bg.png";
+import bonfireLogo from "./bonfire.png";
 import { ManifestoCard } from "./components/manifesto-card";
 import { ParallaxBackground } from "./components/parallax-background";
 import { RevealOnScroll } from "./components/reveal-on-scroll";
 import { ScrollProgress } from "./components/scroll-progress";
 import { SiteNav } from "./components/site-nav";
 import soulenLogo from "./soulen.png";
-import siteBg from "./bg.png";
 
 export default function Home() {
   const year = new Date().getFullYear();
@@ -125,8 +126,101 @@ export default function Home() {
                     Text & image
                   </h4>
                   <p className="text-sm font-light leading-relaxed text-on-surface-variant">
-                    Turn insight into words and visuals you can save or share—reflections
-                    shaped from each session.
+                    Turn insight into words and visuals you can save or
+                    share—reflections shaped from each session.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="#archive"
+                className="group mt-16 inline-flex items-center gap-4 border-b border-secondary/0 py-2 transition-all duration-300 hover:border-secondary active:scale-[0.99]"
+              >
+                <span className="font-label text-sm font-bold tracking-[0.3em] text-secondary">
+                  RELEASE UPDATES
+                </span>
+                <svg
+                  className="h-6 w-6 shrink-0 text-secondary transition-transform group-hover:translate-x-2"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </RevealOnScroll>
+        </section>
+
+        <section
+          id="bonfire"
+          className="relative flex min-h-dvh flex-col items-center overflow-hidden px-4 pb-24 pt-28 text-center sm:px-6 md:pb-32 md:pt-32"
+        >
+          <RevealOnScroll className="relative z-10 w-full max-w-4xl">
+            <div className="mb-16 flex justify-center">
+              <div className="relative inline-block">
+                <div className="absolute -inset-8 animate-pulse rounded-full border border-secondary/20" />
+                <Image
+                  src={bonfireLogo}
+                  alt="Bonfire — Game tracker"
+                  className="h-64 w-64 object-contain drop-shadow-[0_0_50px_rgba(255,140,0,0.3)] md:h-80 md:w-80"
+                  sizes="320px"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex items-center justify-center gap-3">
+                <svg
+                  className="h-7 w-7 shrink-0 text-secondary"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M12 23c-3.5-2.5-6-6.5-6-11 0-3.5 2-6.5 5-8 1-3 3-4 4-4s3 1 4 4c3 1.5 5 4.5 5 8 0 4.5-2.5 8.5-6 11z" />
+                </svg>
+                <h2 className="font-headline text-5xl font-bold uppercase tracking-tight text-on-surface md:text-6xl">
+                  BONFIRE
+                </h2>
+              </div>
+
+              <h3 className="mb-12 font-body text-2xl italic text-outline">
+                Game tracker app.
+              </h3>
+
+              <div className="mt-20 grid grid-cols-1 gap-12 text-left md:grid-cols-3">
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
+                  <div className="mb-4 h-px w-8 bg-primary" />
+                  <h4 className="font-headline text-xl text-on-surface">
+                    Your play diary
+                  </h4>
+                  <p className="text-sm font-light leading-relaxed text-on-surface-variant">
+                    Log what you play, rate it, and build a personal history of
+                    every title—one timeline, not scattered screenshots.
+                  </p>
+                </div>
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
+                  <div className="mb-4 h-px w-8 bg-secondary" />
+                  <h4 className="font-headline text-xl text-on-surface">
+                    Reviews & lists
+                  </h4>
+                  <p className="text-sm font-light leading-relaxed text-on-surface-variant">
+                    Write short takes, curate themed lists, and share what
+                    actually stuck with you—not just what you finished.
+                  </p>
+                </div>
+                <div className="space-y-4 transition-transform duration-300 ease-out md:hover:-translate-y-0.5 motion-reduce:md:hover:translate-y-0">
+                  <div className="mb-4 h-px w-8 bg-outline" />
+                  <h4 className="font-headline text-xl text-on-surface">
+                    Discover together
+                  </h4>
+                  <p className="text-sm font-light leading-relaxed text-on-surface-variant">
+                    See what friends are playing, follow taste-makers, and find
+                    your next obsession through real recommendations.
                   </p>
                 </div>
               </div>

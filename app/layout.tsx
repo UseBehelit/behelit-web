@@ -18,7 +18,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Behelit | Independent apps, built and shipped",
   description:
-    "Behelit is a one-person studio—original apps, crafted end to end. Including Soulen, an AI dream library.",
+    "Behelit is a one-person studio—original apps, crafted end to end. Including Soulen, an AI dream library, and Bonfire, a game tracker.",
 };
 
 export default function RootLayout({
