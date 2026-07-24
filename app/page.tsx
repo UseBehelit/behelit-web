@@ -189,7 +189,7 @@ export default function Home() {
               </div>
 
               <h3 className="mb-12 font-body text-2xl italic text-outline">
-                Game tracker app.
+                Every game has a story worth remembering.
               </h3>
 
               <div className="mt-20 grid grid-cols-1 gap-12 text-left md:grid-cols-3">
