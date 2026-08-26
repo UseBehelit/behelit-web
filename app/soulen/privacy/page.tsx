@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
           <div className="space-y-2 font-body text-sm leading-relaxed text-on-surface-variant">
             <p>Effective date: August 3, 2026</p>
-            <p>Last updated: August 10, 2026</p>
+            <p>Last updated: August 26, 2026</p>
           </div>
         </header>
 
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               <BulletList
                 items={[
                   "Device type, operating system, app version, and similar diagnostics",
-                  "Crash logs, performance data, and error reports",
+                  "Error and diagnostic logs generated when the App contacts our backend",
                   "Language and locale preferences",
                   "Basic network and request metadata needed to secure and operate the Services",
                 ]}
@@ -206,7 +206,7 @@ export default function PrivacyPage() {
                 "Expo push notification infrastructure, Apple Push Notification service, Firebase Cloud Messaging, and related notification delivery services",
                 "OpenAI and other AI providers that process submitted content to generate interpretations, transcriptions, and images",
                 "Apple, Google, RevenueCat, and other payment or subscription partners used to process purchases and subscriptions",
-                "Analytics, crash-reporting, or infrastructure vendors used to operate and improve the Services",
+                "Infrastructure vendors we use to operate, secure, and improve the Services",
                 "Professional advisors, auditors, or authorities when required by law or to protect rights and safety",
                 "A successor entity if Behelit is involved in a merger, acquisition, financing, or sale of assets",
               ]}
