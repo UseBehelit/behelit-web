@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
           <div className="space-y-2 font-body text-sm leading-relaxed text-on-surface-variant">
             <p>Effective date: August 3, 2026</p>
-            <p>Last updated: August 26, 2026</p>
+            <p>Last updated: September 3, 2026</p>
           </div>
         </header>
 
@@ -226,13 +226,65 @@ export default function PrivacyPage() {
               legal, or fortune-telling advice.
             </p>
 
-            <p className="mt-6">
-              When you submit dream text, audio, or images, that content may be
-              transmitted to AI providers to generate results. Do not submit
-              content you are not comfortable sharing with our service
-              providers. Avoid including sensitive personal data about yourself
-              or others unless necessary.
-            </p>
+            <Subsection title="What we send, and to whom">
+              <p>
+                Soulen does not generate interpretations itself. To produce a
+                dream interpretation, a tarot reflection, or a weekly or monthly
+                subconscious report, we transmit the relevant content to OpenAI,
+                our third-party AI processing provider. Depending on the feature
+                you use, that content includes:
+              </p>
+
+              <BulletList
+                items={[
+                  "the dream text you write, and the mood ratings, archetypes, and tags you select",
+                  "the people, places, and life events you add as dream context, which may include information about other individuals",
+                  "the sleep quality you record",
+                  "any voice recording you attach, which is transmitted so that it can be transcribed",
+                  "any reference image you attach",
+                  "the tarot cards drawn and any intention text you write",
+                  "aggregated counts, symbols, themes, and moods derived from your recent dreams and draws, used for weekly and monthly reports",
+                ]}
+              />
+
+              <p className="mt-6">
+                We do not send your name, email address, or account identifiers
+                to OpenAI with this content.
+              </p>
+            </Subsection>
+
+            <Subsection title="Your permission">
+              <p>
+                Before any of this content is sent for the first time, the App
+                tells you what will be sent, names OpenAI as the recipient, and
+                asks for your permission. If you decline, nothing is
+                transmitted, no AI feature runs, and nothing is charged; you can
+                still write, save, and read your own entries. You may withdraw
+                your permission at any time in Settings, under AI data sharing.
+                Withdrawal stops future transmissions and disables the AI
+                features. It does not delete entries you have already saved.
+              </p>
+            </Subsection>
+
+            <Subsection title="How the provider may use it">
+              <p>
+                Content is transmitted over an encrypted connection and
+                processed only to generate the result you requested. Under our
+                agreement with OpenAI, submitted content is not used to train
+                its models, and OpenAI is required to protect it with safeguards
+                at least equivalent to those described in this Policy. We do not
+                sell your content and we do not disclose it to other users.
+              </p>
+            </Subsection>
+
+            <Subsection title="What to avoid submitting">
+              <p>
+                Do not submit content you are not comfortable sharing with our
+                service providers. Avoid including sensitive personal data about
+                yourself or others unless it is necessary to what you are
+                recording.
+              </p>
+            </Subsection>
           </PolicySection>
 
           <PolicySection number="07" title="Data Retention">

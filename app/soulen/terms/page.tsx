@@ -28,7 +28,7 @@ export default function TermsPage() {
 
           <div className="space-y-2 font-body text-sm leading-relaxed text-on-surface-variant">
             <p>Effective date: August 3, 2026</p>
-            <p>Last updated: August 3, 2026</p>
+            <p>Last updated: September 3, 2026</p>
           </div>
         </header>
 
@@ -164,6 +164,23 @@ export default function TermsPage() {
               images, and related outputs ("AI Outputs").
             </p>
 
+            <p className="mt-6">
+              AI Outputs are produced by a third-party AI processing provider
+              (currently OpenAI) from content you submit. Before that content is
+              sent for the first time, we tell you in the App what will be sent
+              and identify the provider, and we ask for your permission. Section
+              6 of our{" "}
+              <a
+                href="/soulen/privacy"
+                className="text-secondary transition-opacity hover:opacity-70"
+              >
+                Privacy Policy
+              </a>{" "}
+              describes what is sent and how it is handled. You may withdraw
+              your permission at any time in Settings, which stops further
+              transmissions and disables the features that depend on them.
+            </p>
+
             <p className="mt-6">AI Outputs:</p>
 
             <BulletList
@@ -280,7 +297,7 @@ export default function TermsPage() {
 
             <p className="mt-6">
               <a
-                href="/privacy"
+                href="/soulen/privacy"
                 className="text-secondary transition-opacity hover:opacity-70"
               >
                 View our Privacy Policy
@@ -405,11 +422,11 @@ export default function TermsPage() {
               items={[
                 "These Terms are between you and Behelit, not Apple",
                 "Apple has no obligation to provide maintenance or support for the App",
-                "In the event of any failure of the App to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price of the App, if any",
-                "Apple is not responsible for addressing claims relating to the App or your possession or use of it",
+                "In the event of any failure of the App to conform to an applicable warranty, you may notify Apple, and Apple may refund the purchase price of the App, if any; to the maximum extent permitted by law, Apple has no other warranty obligation",
+                "Apple is not responsible for addressing claims relating to the App or your possession or use of it, including product liability, legal/regulatory claims, and consumer protection claims",
                 "Apple is not responsible for investigating, defending, settling, or discharging third-party intellectual property infringement claims",
                 "Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you",
-                "You represent that you are not located in a country subject to a U.S. government embargo and are not on any U.S. government prohibited or restricted party list",
+                "You represent that you are not located in a country subject to a U.S. government embargo or designated as a \"terrorist supporting\" country, and you are not on any U.S. government prohibited or restricted party list",
               ]}
             />
           </TermsSection>
