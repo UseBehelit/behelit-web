@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
           <div className="space-y-2 font-body text-sm leading-relaxed text-on-surface-variant">
             <p>Effective date: August 3, 2026</p>
-            <p>Last updated: September 3, 2026</p>
+            <p>Last updated: September 10, 2026</p>
           </div>
         </header>
 
@@ -104,6 +104,7 @@ export default function PrivacyPage() {
                   "Subscription status for Soulen Plus, including plan, status, period dates, and related billing identifiers",
                   "App Store or Google Play purchase events processed through our billing partners",
                   "Feature usage needed to operate metering, allowances, and premium access",
+                  "In-app usage events: that you opened the App on a given day, finished onboarding, opened a dream reading, were shown an upgrade screen and which one, or opened a notification. Each event is stored with your account identifier, the time, your device platform, and the app version, and never contains the text of your dreams, intentions, or anything else you write",
                 ]}
               />
             </Subsection>
@@ -166,6 +167,7 @@ export default function PrivacyPage() {
                 "Personalize language, display name, and in-app preferences",
                 "Secure the Services, prevent fraud and abuse, and enforce our Terms of Service",
                 "Diagnose bugs, improve reliability, and develop new features",
+                "Understand in aggregate how the App is used, for example how many people return in their first week, so we can improve it",
                 "Comply with law and respond to lawful requests",
                 "Communicate about the Services, account issues, and important product updates",
                 "Deliver push notifications and local reminders according to your settings",
@@ -197,6 +199,13 @@ export default function PrivacyPage() {
 
           <PolicySection number="05" title="How We Share Information">
             <p>We do not sell your personal information.</p>
+
+            <p className="mt-6">
+              We do not use third-party analytics or advertising tools. The
+              in-app usage events described under Information We Collect are
+              stored only with our backend provider and are not shared with
+              anyone else.
+            </p>
 
             <p className="mt-6">We share information only as needed with:</p>
 
@@ -291,6 +300,11 @@ export default function PrivacyPage() {
             <p>
               We retain account and content data while your account is active
               and as needed to provide the Services.
+            </p>
+
+            <p className="mt-6">
+              In-app usage events are deleted automatically 13 months after
+              they are recorded, or earlier if you delete your account.
             </p>
 
             <p className="mt-6">
