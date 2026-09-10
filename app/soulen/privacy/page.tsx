@@ -248,7 +248,7 @@ export default function PrivacyPage() {
                 items={[
                   "the dream text you write, and the mood ratings, archetypes, and tags you select",
                   "the people, places, and life events you add as dream context, which may include information about other individuals",
-                  "the sleep quality you record",
+                  "the sleep quality and hours of sleep you record",
                   "any voice recording you attach, which is transmitted so that it can be transcribed",
                   "any reference image you attach",
                   "the tarot cards drawn and any intention text you write",
