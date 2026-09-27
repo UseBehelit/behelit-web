@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 export const metadata = {
@@ -10,12 +11,12 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-[#0e0e0e] text-[#e5e2e1]">
       <div className="mx-auto w-full max-w-4xl px-6 py-20 sm:px-10 md:py-28">
-        <a
+        <Link
           href="/"
           className="mb-16 inline-block font-body text-[10px] font-light tracking-[0.25em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
         >
           ← BACK TO BEHELIT
-        </a>
+        </Link>
 
         <header className="mb-20 border-b border-[#444748]/20 pb-12">
           <span className="mb-5 block font-label text-xs uppercase tracking-[0.4em] text-secondary">
@@ -35,11 +36,11 @@ export default function TermsPage() {
         <div className="space-y-16 font-body text-[15px] font-light leading-[1.9] text-on-surface-variant md:text-base">
           <section>
             <p>
-              These Terms of Service ("Terms") govern your access to and use of
+              These Terms of Service (&quot;Terms&quot;) govern your access to and use of
               Soulen, the AI-powered dream interpretation and self-reflection
-              mobile application (the "App"), and related websites or services
-              (together, the "Services") provided by Behelit ("Behelit," "we,"
-              "us," or "our").
+              mobile application (the &quot;App&quot;), and related websites or services
+              (together, the &quot;Services&quot;) provided by Behelit (&quot;Behelit,&quot; &quot;we,&quot;
+              &quot;us,&quot; or &quot;our&quot;).
             </p>
 
             <p className="mt-6">
@@ -126,7 +127,7 @@ export default function TermsPage() {
 
           <TermsSection number="04" title="Your Content">
             <p>
-              "User Content" means dream text, tags, feelings, images, audio,
+              &quot;User Content&quot; means dream text, tags, feelings, images, audio,
               display name, and any other material you submit.
             </p>
 
@@ -161,7 +162,7 @@ export default function TermsPage() {
           <TermsSection number="05" title="AI Outputs">
             <p>
               The Services may generate titles, interpretations, moods, symbols,
-              images, and related outputs ("AI Outputs").
+              images, and related outputs (&quot;AI Outputs&quot;).
             </p>
 
             <p className="mt-6">
@@ -335,8 +336,8 @@ export default function TermsPage() {
 
           <TermsSection number="11" title="Disclaimers">
             <p className="uppercase">
-              The Services and AI Outputs are provided "as is" and "as
-              available." To the maximum extent permitted by law, Behelit
+              The Services and AI Outputs are provided &quot;as is&quot; and &quot;as
+              available.&quot; To the maximum extent permitted by law, Behelit
               disclaims all warranties, express or implied, including
               merchantability, fitness for a particular purpose, title, and
               non-infringement.
@@ -373,7 +374,7 @@ export default function TermsPage() {
           <TermsSection number="13" title="Indemnity">
             <p>
               You agree to defend and indemnify Behelit against claims, damages,
-              losses, and expenses, including reasonable attorneys' fees,
+              losses, and expenses, including reasonable attorneys&apos; fees,
               arising from your User Content, your misuse of the Services, or
               your violation of these Terms or applicable law.
             </p>
@@ -401,7 +402,7 @@ export default function TermsPage() {
           <TermsSection number="15" title="Changes to the Services or Terms">
             <p>
               We may modify the Services and these Terms. We will update the
-              "Last updated" date in the App and may provide additional notice
+              &quot;Last updated&quot; date in the App and may provide additional notice
               when required.
             </p>
 
@@ -433,7 +434,7 @@ export default function TermsPage() {
 
           <TermsSection number="17" title="Governing Law and Disputes">
             <p>
-              These Terms are governed by the laws applicable to Behelit's
+              These Terms are governed by the laws applicable to Behelit&apos;s
               principal place of business, without regard to conflict-of-law
               rules, except where mandatory consumer protections in your country
               of residence require otherwise.
@@ -442,7 +443,7 @@ export default function TermsPage() {
             <p className="mt-6">
               If a dispute arises, contact us first at support@behelit.dev so we
               can try to resolve it informally. If informal resolution fails,
-              disputes will be resolved in the courts competent for Behelit's
+              disputes will be resolved in the courts competent for Behelit&apos;s
               principal place of business, unless mandatory law gives you the
               right to bring claims in your local courts.
             </p>

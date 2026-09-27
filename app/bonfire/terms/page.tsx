@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 export const metadata = {
@@ -10,12 +11,12 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-[#e5e1e4]">
       <div className="mx-auto w-full max-w-4xl px-6 py-20 sm:px-10 md:py-28">
-        <a
+        <Link
           href="/"
           className="mb-16 inline-block font-body text-[10px] font-light tracking-[0.25em] text-[#756f73] transition-colors hover:text-[#e5e1e4]"
         >
           ← BACK TO BEHELIT
-        </a>
+        </Link>
 
         <header className="mb-20 border-b border-[#2a2a2c] pb-12">
           <span className="mb-5 block font-label text-xs uppercase tracking-[0.4em] text-[#ff5500]">
