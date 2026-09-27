@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const metadata = {
   title: "Delete Your Account | Soulen",
   description:
@@ -46,12 +47,12 @@ export default function AccountDeletionPage() {
   return (
     <main className="min-h-screen bg-[#0e0e0e] text-[#e5e2e1]">
       <div className="mx-auto w-full max-w-4xl px-6 py-20 sm:px-10 md:py-28">
-        <a
+        <Link
           href="/"
           className="mb-16 inline-block font-body text-[10px] font-light tracking-[0.25em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
         >
           ← BACK TO BEHELIT
-        </a>
+        </Link>
 
         <header className="mb-20 border-b border-[#444748]/20 pb-12">
           <span className="mb-5 block font-label text-xs uppercase tracking-[0.4em] text-secondary">

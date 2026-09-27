@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const metadata = {
   title: "Privacy Policy | Soulen",
   description:
@@ -8,12 +9,12 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#0e0e0e] text-[#e5e2e1]">
       <div className="mx-auto w-full max-w-4xl px-6 py-20 sm:px-10 md:py-28">
-        <a
+        <Link
           href="/"
           className="mb-16 inline-block font-body text-[10px] font-light tracking-[0.25em] text-[#444748] transition-colors hover:text-[#e5e2e1]"
         >
           ← BACK TO BEHELIT
-        </a>
+        </Link>
 
         <header className="mb-20 border-b border-[#444748]/20 pb-12">
           <span className="mb-5 block font-label text-xs uppercase tracking-[0.4em] text-secondary">
@@ -33,11 +34,11 @@ export default function PrivacyPage() {
         <div className="space-y-16 font-body text-[15px] font-light leading-[1.9] text-on-surface-variant md:text-base">
           <section>
             <p>
-              This Privacy Policy explains how Behelit ("Behelit," "we," "us,"
-              or "our") collects, uses, shares, and protects information when
+              This Privacy Policy explains how Behelit (&quot;Behelit,&quot; &quot;we,&quot; &quot;us,&quot;
+              or &quot;our&quot;) collects, uses, shares, and protects information when
               you use Soulen, our AI-powered dream interpretation and
-              self-reflection mobile application (the "App"), and related
-              websites or services (together, the "Services").
+              self-reflection mobile application (the &quot;App&quot;), and related
+              websites or services (together, the &quot;Services&quot;).
             </p>
 
             <p className="mt-6">
@@ -324,7 +325,7 @@ export default function PrivacyPage() {
 
             <p className="mt-6">
               Purchase records held by Apple, Google, or other payment platforms
-              may continue to exist under those platforms' policies.
+              may continue to exist under those platforms&apos; policies.
             </p>
           </PolicySection>
 
@@ -437,7 +438,7 @@ export default function PrivacyPage() {
             <p>
               We may update this Privacy Policy from time to time. We will post
               the updated version in the App or on this page with a revised
-              "Last updated" date and, when required, provide additional notice.
+              &quot;Last updated&quot; date and, when required, provide additional notice.
               Continued use of the Services after an update means you accept the
               revised Policy.
             </p>
