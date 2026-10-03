@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          has: [{ type: "host", value: "evenstate\\.(behelit\\.dev|localhost)" }],
+          destination: "/evenstate",
+        },
+      ],
+    };
+  },
   turbopack: {
     rules: {
       // Import GLSL as a plain string: `import src from "@/shaders/x.glsl"`.

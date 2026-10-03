@@ -26,6 +26,18 @@ npm run lint
 
 ## Editing content
 
+### Evenstate
+
+`app/evenstate/` contains Evenstate's independent root layout, stylesheet,
+and intentionally empty home page. Add its frontend in `app/evenstate/page.tsx`.
+The existing Behelit site lives in `app/(behelit)/`; the route group preserves
+its public URLs and keeps its theme separate from Evenstate.
+
+`next.config.ts` rewrites the home page of `evenstate.behelit.dev` to
+`/evenstate` without changing the browser URL. Locally, use
+`http://evenstate.localhost:3000` or `http://localhost:3000/evenstate`.
+The subdomain must point to the same deployment as this project.
+
 **Apps — `content/relics.ts`.** The only place app data lives. Each entry
 becomes one altar and one panel, in array order:
 
@@ -61,7 +73,7 @@ marked block with a real request and return `{ ok: true }`; the form already
 handles success, invalid input, errors and the unconfigured state.
 
 **Colour — `lib/palette.ts`.** The single source for the palette.
-`app/globals.css` mirrors it as Tailwind tokens; shaders read it as uniforms.
+`app/(behelit)/globals.css` mirrors it as Tailwind tokens; shaders read it as uniforms.
 
 ## GLSL imports
 

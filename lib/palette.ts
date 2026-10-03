@@ -1,7 +1,7 @@
 /**
  * The Behelit palette — single source of truth for colour.
  *
- * `app/globals.css` mirrors these values as CSS custom properties (Tailwind v4
+ * `app/(behelit)/globals.css` mirrors these values as CSS custom properties (Tailwind v4
  * `@theme` tokens), and every shader receives them as uniforms built from this
  * file, so DOM and WebGL can never drift apart. If you change a value here,
  * change the matching `--color-*` token in `globals.css`.
