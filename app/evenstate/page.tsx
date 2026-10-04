@@ -73,7 +73,7 @@ export default function EvenstatePage() {
             <ol className="ev-steps">
               <li><div><h3>See what fits now.</h3><p>Browse today’s practices by availability and time of day. Begin with the core routine, then add optional practices and choose their days.</p><p className="ev-step-detail">Core practices stay in your routine. Changes to optional practices apply from the next routine day.</p></div></li>
               <li><div><h3>Choose a way to practice.</h3><p>Follow guided steps, write a reflection, work through a checklist, or try a creative exercise. Pause when you need to. When a suggested timer ends, choose whether to continue or finish.</p></div></li>
-              <li><div><h3>See the practice you’ve put in.</h3><p>Brain and Body each reflect the required practices you’ve completed today. Revisit your practice history and build a streak by completing your daily routine.</p></div></li>
+              <li><div><h3>See the practice you’ve put in.</h3><p>Brain and Body reflect the required practices you’ve completed today. Review your practice history, and open Evenstate each day to keep your daily streak.</p></div></li>
             </ol>
           </div>
           <figure className="ev-routine-figure">
@@ -82,7 +82,7 @@ export default function EvenstatePage() {
               <p className="ev-sheet-title">A little practice.<br />Something to return to.</p>
               <div className="ev-example-totals"><div><span className="ev-completion-orb ev-orb-brain" aria-hidden="true" /><span>Brain<strong>2 / 4</strong><small>required practices</small></span></div><div><span className="ev-completion-orb ev-orb-body" aria-hidden="true" /><span>Body<strong>1 / 3</strong><small>required practices</small></span></div></div>
               <ul className="ev-example-records"><li><span className="ev-check" aria-hidden="true">✓</span><span>Name the emotion<small>Brain · Completed</small></span></li><li><span className="ev-check" aria-hidden="true">✓</span><span>Morning daylight<small>Body · Completed</small></span></li><li><span className="ev-open-circle" aria-hidden="true" /><span>Plan one next step<small>Brain · Still to practice</small></span></li></ul>
-              <p className="ev-sheet-note">A shared streak follows completion of all required Brain and Body practices for the day.</p>
+              <p className="ev-sheet-note">Your daily streak grows with visits on consecutive days, independently of practice completion.</p>
             </div>
             <figcaption>Color reflects completed practices, not a health score.<br />An illustration, not an app screenshot. Daily totals vary by plan.</figcaption>
           </figure>
