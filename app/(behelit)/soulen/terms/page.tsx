@@ -50,7 +50,7 @@ export default function TermsPage() {
             </p>
 
             <div className="mt-8 border-l border-secondary pl-6">
-              <p>Contact: support@behelit.dev</p>
+              <p>Contact: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a
@@ -310,7 +310,7 @@ export default function TermsPage() {
             <p>
               You may request deletion of your account through the in-app delete
               account flow, where available, or by contacting us at
-              support@behelit.dev.
+              app@behelit.dev.
             </p>
 
             <p className="mt-6">
@@ -441,7 +441,7 @@ export default function TermsPage() {
             </p>
 
             <p className="mt-6">
-              If a dispute arises, contact us first at support@behelit.dev so we
+              If a dispute arises, contact us first at app@behelit.dev so we
               can try to resolve it informally. If informal resolution fails,
               disputes will be resolved in the courts competent for Behelit&apos;s
               principal place of business, unless mandatory law gives you the
@@ -463,7 +463,7 @@ export default function TermsPage() {
           <TermsSection number="19" title="Contact">
             <div className="border-l border-secondary pl-6">
               <p className="font-medium text-on-surface">Behelit</p>
-              <p>Email: support@behelit.dev</p>
+              <p>Email: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a

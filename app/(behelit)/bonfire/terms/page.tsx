@@ -57,7 +57,7 @@ export default function TermsPage() {
             </p>
 
             <div className="mt-8 border-l border-[#ff5500] pl-6">
-              <p>Contact: support@behelit.dev</p>
+              <p>Contact: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a
@@ -159,7 +159,7 @@ export default function TermsPage() {
             </p>
             <p className="mt-6">
               If your content is removed or your account is suspended and you
-              believe it was a mistake, email support@behelit.dev and we will
+              believe it was a mistake, email app@behelit.dev and we will
               look at it again.
             </p>
           </TermsSection>
@@ -243,7 +243,7 @@ export default function TermsPage() {
             </p>
             <p className="mt-6">
               If you believe something on Bonfire infringes your copyright,
-              email support@behelit.dev with a description of the work, where it
+              email app@behelit.dev with a description of the work, where it
               appears, and your contact details. We will investigate and remove
               infringing content.
             </p>
@@ -272,7 +272,7 @@ export default function TermsPage() {
             </p>
             <p className="mt-6">
               To have the underlying records permanently erased rather than
-              withdrawn, email support@behelit.dev from the address on your
+              withdrawn, email app@behelit.dev from the address on your
               account. See the Privacy Policy for what survives deletion and
               why.
             </p>
@@ -365,7 +365,7 @@ export default function TermsPage() {
               of residence require otherwise.
             </p>
             <p className="mt-6">
-              If a dispute arises, contact us first at support@behelit.dev so we
+              If a dispute arises, contact us first at app@behelit.dev so we
               can try to resolve it informally. If informal resolution fails,
               disputes will be resolved in the courts competent for
               Behelit&apos;s principal place of business, unless mandatory law
@@ -387,7 +387,7 @@ export default function TermsPage() {
           <TermsSection number="22" title="Contact">
             <div className="border-l border-[#ff5500] pl-6">
               <p className="font-medium text-[#e5e1e4]">Behelit</p>
-              <p>Email: support@behelit.dev</p>
+              <p>Email: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a

@@ -49,7 +49,7 @@ export default function PrivacyPage() {
             </p>
 
             <div className="mt-8 border-l border-[#ff5500] pl-6">
-              <p>Contact: support@behelit.dev</p>
+              <p>Contact: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a
@@ -316,7 +316,7 @@ export default function PrivacyPage() {
             <Subsection title="Having your data erased">
               <p>
                 To have the underlying records permanently erased rather than
-                withdrawn, email support@behelit.dev from the address on your
+                withdrawn, email app@behelit.dev from the address on your
                 account. We will erase your personal data within 30 days and
                 confirm when it is done, except where we are legally required to
                 retain something, in which case we will tell you what and why.
@@ -339,7 +339,7 @@ export default function PrivacyPage() {
             <BulletList
               items={[
                 "Access and correction: most of your data is editable directly in the app, on your profile and in Settings",
-                "Export: email support@behelit.dev and we will send you a machine-readable copy",
+                "Export: email app@behelit.dev and we will send you a machine-readable copy",
                 "Erasure: see the section above",
                 "Objection and restriction: email us and tell us what you object to",
                 "Complaint: you may complain to your local data protection authority",
@@ -357,7 +357,7 @@ export default function PrivacyPage() {
               Bonfire is not intended for children under 13, or under the
               minimum age required in your country, and we do not knowingly
               collect their information. If you believe a child has created an
-              account, email support@behelit.dev and we will remove it.
+              account, email app@behelit.dev and we will remove it.
             </p>
           </PolicySection>
 
@@ -388,7 +388,7 @@ export default function PrivacyPage() {
           <PolicySection number="13" title="Contact">
             <div className="border-l border-[#ff5500] pl-6">
               <p className="font-medium text-[#e5e1e4]">Behelit</p>
-              <p>Email: support@behelit.dev</p>
+              <p>Email: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a

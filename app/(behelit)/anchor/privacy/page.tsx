@@ -53,7 +53,7 @@ export default function AnchorPrivacyPage() {
               tracking, or external AI processing. Your device’s backup settings
               can create a separate copy of local app data, as explained below.
             </p>
-            <p>Contact: <a href="mailto:support@behelit.dev" className={linkStyle}>support@behelit.dev</a>.</p>
+            <p>Contact: <a href="mailto:app@behelit.dev" className={linkStyle}>app@behelit.dev</a>.</p>
           </section>
 
           <nav aria-label="Privacy policy sections" className="rounded-2xl border border-white/15 bg-white/[0.025] p-6">
@@ -228,7 +228,7 @@ export default function AnchorPrivacyPage() {
             </p>
             <address className="border-l-2 border-[#f59e0b] pl-5 not-italic">
               <strong className="text-[#e5e2e1]">Behelit — developer and publisher of ANCHOR</strong><br />
-              Privacy and support: <a href="mailto:support@behelit.dev" className={linkStyle}>support@behelit.dev</a><br />
+              Privacy and support: <a href="mailto:app@behelit.dev" className={linkStyle}>app@behelit.dev</a><br />
               Website: <a href="https://www.behelit.dev" className={linkStyle}>www.behelit.dev</a>
             </address>
           </Section>

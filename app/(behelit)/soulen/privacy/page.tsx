@@ -47,7 +47,7 @@ export default function PrivacyPage() {
             </p>
 
             <div className="mt-8 border-l border-secondary pl-6">
-              <p>Contact: support@behelit.dev</p>
+              <p>Contact: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a
@@ -356,7 +356,7 @@ export default function PrivacyPage() {
 
             <p className="mt-6">
               You can also control notifications at the operating-system level.
-              To exercise privacy rights, contact us at support@behelit.dev. We
+              To exercise privacy rights, contact us at app@behelit.dev. We
               may need to verify your identity before fulfilling a request.
             </p>
           </PolicySection>
@@ -418,7 +418,7 @@ export default function PrivacyPage() {
             </p>
 
             <p className="mt-6">
-              To exercise applicable rights, contact us at support@behelit.dev.
+              To exercise applicable rights, contact us at app@behelit.dev.
             </p>
           </PolicySection>
 
@@ -452,7 +452,7 @@ export default function PrivacyPage() {
 
             <div className="mt-6 border-l border-secondary pl-6">
               <p className="font-medium text-on-surface">Behelit</p>
-              <p>Email: support@behelit.dev</p>
+              <p>Email: app@behelit.dev</p>
               <p>
                 Website:{" "}
                 <a

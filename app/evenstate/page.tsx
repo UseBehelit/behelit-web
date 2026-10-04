@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ReliefChoices } from "@/components/evenstate/ReliefChoices";
 
 const title = "Evenstate — Daily practices for mind and body";
@@ -103,7 +104,7 @@ export default function EvenstatePage() {
         <section className="ev-closing" aria-labelledby="closing-heading"><div className="ev-container"><span className="ev-closing-mark" aria-hidden="true">✳</span><p className="ev-eyebrow">Come back to yourself</p><h2 id="closing-heading">A little space.<br />A daily rhythm.</h2><p>Explore daily practices for mind and body, with guided pauses for the moments in between.</p><div className="ev-actions"><a className="ev-button" href="#daily">Explore the daily routine <Arrow /></a><a className="ev-text-link" href="https://www.behelit.dev">About Behelit <Arrow /></a></div></div></section>
       </main>
 
-      <footer className="ev-footer ev-container"><div className="ev-footer-top"><Brand /><nav aria-label="Footer navigation"><a href="#daily">Daily</a><a href="#relief">Relief</a><a href="#your-practice">Your practice</a><a href="https://www.behelit.dev">Behelit <Arrow /></a></nav></div><div className="ev-footer-bottom"><p>Everyday wellbeing support. Not a substitute for professional care.</p><p>Evenstate by Behelit.</p></div></footer>
+      <footer className="ev-footer ev-container"><div className="ev-footer-top"><Brand /><nav aria-label="Footer navigation"><Link href="/privacy" prefetch={false}>Privacy</Link><Link href="/terms" prefetch={false}>Terms</Link><Link href="/support" prefetch={false}>Support</Link><a href="https://www.behelit.dev">Behelit <Arrow /></a></nav></div><div className="ev-footer-bottom"><p>Evenstate is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Consult a qualified healthcare professional for medical advice, diagnosis, or treatment.</p><p>Evenstate by Behelit.</p></div></footer>
     </>
   );
 }

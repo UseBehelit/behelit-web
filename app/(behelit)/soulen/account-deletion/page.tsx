@@ -100,10 +100,10 @@ export default function AccountDeletionPage() {
             <p>
               Email{" "}
               <a
-                href="mailto:support@behelit.dev?subject=Account%20deletion%20request"
+                href="mailto:app@behelit.dev?subject=Account%20deletion%20request"
                 className="text-secondary transition-opacity hover:opacity-70"
               >
-                support@behelit.dev
+                app@behelit.dev
               </a>{" "}
               from <span className="text-on-surface">the email address on the account</span>, with the
               subject <span className="text-on-surface">Account deletion request</span>.
@@ -191,10 +191,10 @@ export default function AccountDeletionPage() {
               keeping your account. To request removal of a specific category of
               data without closing the account, email{" "}
               <a
-                href="mailto:support@behelit.dev"
+                href="mailto:app@behelit.dev"
                 className="text-secondary transition-opacity hover:opacity-70"
               >
-                support@behelit.dev
+                app@behelit.dev
               </a>{" "}
               and tell us what you want removed.
             </p>
@@ -218,10 +218,10 @@ export default function AccountDeletionPage() {
           <p className="mt-4">
             Questions:{" "}
             <a
-              href="mailto:support@behelit.dev"
+              href="mailto:app@behelit.dev"
               className="text-secondary transition-opacity hover:opacity-70"
             >
-              support@behelit.dev
+              app@behelit.dev
             </a>
           </p>
         </footer>

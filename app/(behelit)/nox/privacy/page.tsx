@@ -65,7 +65,7 @@ const sections = [
     "7. Website visits and support",
     [
       "Opening this policy or another external link uses your browser and makes a network request. Website hosting providers may process IP address, browser information, requested URL, and request time to deliver and secure the page. This policy page adds no analytics or advertising scripts and receives no NOX local workspace.",
-      "If you email support@behelit.dev, Behelit receives your address and the message or attachments you choose to send. In-app support drafts may include the app version, operating system, and device platform; you can review the draft before sending. We use correspondence to respond and resolve issues, with email providers processing it to provide their service. Avoid including precise coordinates or other private information unless necessary for your request.",
+      "If you email app@behelit.dev, Behelit receives your address and the message or attachments you choose to send. In-app support drafts may include the app version, operating system, and device platform; you can review the draft before sending. We use correspondence to respond and resolve issues, with email providers processing it to provide their service. Avoid including precise coordinates or other private information unless necessary for your request.",
       "We retain support correspondence only as long as needed to handle the request and related legal obligations. You can request deletion. We may disclose information we hold when legally required, but we cannot disclose local app records we do not possess."
     ]
   ],
@@ -73,7 +73,7 @@ const sections = [
     "rights",
     "8. Privacy rights and children",
     [
-      "You control local app records through the app and device settings. Depending on applicable law, you may have rights to access, correct, delete, restrict, object to, or obtain a portable copy of information Behelit holds, and to complain to a data-protection authority. Contact support@behelit.dev to exercise those rights. We may need to verify that a request relates to you. We cannot provide a server export of records held only on your device.",
+      "You control local app records through the app and device settings. Depending on applicable law, you may have rights to access, correct, delete, restrict, object to, or obtain a portable copy of information Behelit holds, and to complain to a data-protection authority. Contact app@behelit.dev to exercise those rights. We may need to verify that a request relates to you. We cannot provide a server export of records held only on your device.",
       "Where EEA or UK data-protection law applies, support and website security processing relies on our legitimate interests in responding to requests and operating a secure service, and on legal obligations where applicable. Optional GPS access is controlled by your permission choice. This policy does not replace the independent policies of weather, operating-system, or backup providers.",
       "NOX is a general-audience astronomy tool, not a service directed at children under 13. We do not knowingly collect children’s personal information through support. A parent or guardian can contact us to request deletion if a child has supplied such information."
     ]
@@ -83,7 +83,7 @@ const sections = [
     "9. Changes and contact",
     [
       "We will update this page and its date if our practices change. Material changes to data use will be explained in the app where appropriate, with consent requested where required.",
-      "Behelit — developer and publisher of NOX. Privacy and support: support@behelit.dev. Website: https://www.behelit.dev."
+      "Behelit — developer and publisher of NOX. Privacy and support: app@behelit.dev. Website: https://www.behelit.dev."
     ]
   ]
 ] as const;
@@ -99,7 +99,7 @@ export default function NoxPrivacyPage() {
         <p className="mt-6 text-xl">Privacy Policy</p>
         <p className="mt-3 text-sm text-[#a0a7bd]">Effective and last updated: <time dateTime="2026-09-15">September 15, 2026</time></p>
         <p className="mt-6 leading-8 text-[#c8cddc]">Sky calculations happen on your device. Optional location and live forecasts have specific data flows, explained below. No accounts, advertising, analytics tracking, or external AI processing.</p>
-        <a href="mailto:support@behelit.dev" className={`mt-4 inline-block ${linkStyle}`}>support@behelit.dev</a>
+        <a href="mailto:app@behelit.dev" className={`mt-4 inline-block ${linkStyle}`}>app@behelit.dev</a>
       </header>
       <nav aria-label="Privacy policy sections" className="my-10 rounded-2xl border border-white/15 bg-[#131829] p-6">
         <h2 className="mb-3 text-sm uppercase tracking-wider">In this policy</h2>

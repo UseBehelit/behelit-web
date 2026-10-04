@@ -87,7 +87,7 @@ test('HTTP: query rewrite, non-indexable local host, real product 404, no prefix
   assert.equal(response.status, 200);
   assert.match(response.headers['x-middleware-rewrite'], /\/evenstate\?campaign=local$/);
   assert.match((await request('/', 'evenstate.localhost:3107')).headers['x-robots-tag'], /noindex/);
-  for (const path of ['/missing', '/soulen/privacy', '/privacy', '/terms', '/missing.png']) {
+  for (const path of ['/missing', '/soulen/privacy', '/privacy/missing', '/terms/missing', '/missing.png']) {
     const missing = await request(path);
     assert.equal(missing.status, 404, path);
     assert.match(missing.body, /A little off the path/);
@@ -97,9 +97,30 @@ test('HTTP: query rewrite, non-indexable local host, real product 404, no prefix
   assert.equal(duplicate.status, 308);
   assert.equal(duplicate.headers.location, 'https://evenstate.behelit.dev/?campaign=test');
 });
+test('HTTP: Evenstate legal pages have unique canonicals, correct contact, and host isolation', async () => {
+  for (const path of ['/privacy', '/terms', '/support']) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    assert.match(response.body, /app@behelit.dev/);
+    assert.doesNotMatch(response.body, /support@behelit.dev/);
+    assert.equal(response.body.match(/rel="canonical" href="([^"]+)"/)[1], `https://evenstate.behelit.dev${path}`);
+    assert.equal((response.body.match(/<h1[ >]/g) ?? []).length, 1);
+    assert.equal((await request(path, 'behelit.dev')).status, 404);
+    assert.equal((await request(path, 'www.behelit.dev')).status, 404);
+    const duplicate = await request(`/evenstate${path}`, 'behelit.dev');
+    assert.equal(duplicate.status, 308);
+    assert.equal(duplicate.headers.location, `https://evenstate.behelit.dev${path}`);
+    assert.match((await request('/sitemap.xml')).body, new RegExp(`<loc>https://evenstate.behelit.dev${path}</loc>`));
+  }
+  const home = await request('/');
+  for (const path of ['/privacy', '/terms', '/support']) assert.ok(home.body.includes(`href="${path}"`));
+});
 test('HTTP: legal pages on original host, framework files, public artwork, icons and discovery routes', async () => {
   for (const path of ['/anchor/privacy', '/nox/privacy', '/soulen/privacy', '/soulen/terms', '/soulen/account-deletion', '/bonfire/privacy', '/bonfire/terms']) {
-    assert.equal((await request(path, 'www.behelit.dev')).status, 200, path);
+    const response = await request(path, 'www.behelit.dev');
+    assert.equal(response.status, 200, path);
+    assert.match(response.body, /app@behelit.dev/);
+    assert.doesNotMatch(response.body, /support@behelit.dev/);
   }
   const home = await request('/');
   const stylesheet = home.body.match(/href="([^\"]+\.css[^\"]*)"/)[1].replaceAll('&amp;', '&');
