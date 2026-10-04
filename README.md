@@ -28,15 +28,19 @@ npm run lint
 
 ### Evenstate
 
-`app/evenstate/` contains Evenstate's independent root layout, stylesheet,
-and intentionally empty home page. Add its frontend in `app/evenstate/page.tsx`.
-The existing Behelit site lives in `app/(behelit)/`; the route group preserves
-its public URLs and keeps its theme separate from Evenstate.
+`app/evenstate/` contains the independent product marketing page, layout,
+stylesheet, metadata and 404. `proxy.ts` selects it for `evenstate.behelit.dev`
+while preserving Behelit and existing product routes. The internal `/evenstate`
+path redirects to the canonical product host; it is not another landing-page URL.
 
-`next.config.ts` rewrites the home page of `evenstate.behelit.dev` to
-`/evenstate` without changing the browser URL. Locally, use
-`http://evenstate.localhost:3000` or `http://localhost:3000/evenstate`.
-The subdomain must point to the same deployment as this project.
+Locally, use `http://evenstate.localhost:3000`, or, with `npm run dev`,
+`http://localhost:3000/?evenstate-preview=1`. The explicit query override also
+works on Vercel Preview deployments, is non-indexable, and is disabled in
+production. Normal preview URLs still show Behelit.
+
+See [the Evenstate handoff](docs/EVENSTATE.md) for assets and licenses, routing,
+verification commands, limitations, and user-owned domain/DNS setup. Run
+`npm run test:evenstate` against a production server on port 3107.
 
 **Apps — `content/relics.ts`.** The only place app data lives. Each entry
 becomes one altar and one panel, in array order:

@@ -1,6 +1,239 @@
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  background: #fff;
+/* Evenstate owns a separate root layout. Every rule stays under this root. */
+html.evenstate {
+  --ev-background: #fcf9f3;
+  --ev-ink: #1c1c18;
+  --ev-muted: #414844;
+  --ev-primary: #385c4b;
+  --ev-line: #e5e2dc;
+  color-scheme: light;
+  background: var(--ev-background);
+  color: var(--ev-ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+.evenstate *, .evenstate *::before, .evenstate *::after { box-sizing: border-box; }
+.evenstate body { margin: 0; font-family: var(--font-evenstate), Arial, sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+.evenstate :where(h1,h2,h3,p,figure) { margin: 0; }
+.evenstate :where(h1,h2,h3) { font-weight: 500; text-wrap: balance; }
+.evenstate h1 { font-size: clamp(44px, 5.05vw, 73px); line-height: 1.09; letter-spacing: -.057em; }
+.evenstate h2 { font-size: clamp(34px, 3.35vw, 48px); line-height: 1.18; letter-spacing: -.047em; }
+.evenstate h3 { font-size: 23px; line-height: 1.35; letter-spacing: -.025em; }
+.evenstate p { color: var(--ev-muted); }
+.evenstate a { color: inherit; text-decoration: none; }
+.evenstate button { font: inherit; }
+.evenstate img { display: block; max-width: 100%; height: auto; }
+.evenstate ::selection { background: #cde9dc; color: #1c1c18; }
+.evenstate :focus-visible { outline: 2px solid var(--ev-primary); outline-offset: 5px; }
+.evenstate .ev-container { width: min(100% - 88px, 1200px); margin-inline: auto; }
+.evenstate .ev-section { padding-block: 106px; }
+.evenstate .ev-eyebrow { display: flex; align-items: center; gap: 9px; color: var(--ev-primary); font-size: 11px; line-height: 1.6; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 24px; }
+.evenstate .ev-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ev-primary); flex: 0 0 auto; }
+.evenstate .ev-lead { font-size: 18px; line-height: 1.8; max-width: 48ch; }
+.evenstate .ev-button { display: inline-flex; align-items: center; justify-content: center; gap: 30px; min-height: 52px; padding: 13px 24px; background: var(--ev-primary); color: #fff; border: 1px solid var(--ev-primary); border-radius: 100px; font-size: 14px; font-weight: 500; transition: background 200ms, box-shadow 200ms; }
+.evenstate .ev-button:hover { background: #294637; box-shadow: 0 3px 12px #385c4b16; }
+.evenstate .ev-arrow { font-family: Arial, sans-serif; font-size: 20px; line-height: 1; }
+.evenstate .ev-text-link { display: inline-flex; align-items: center; gap: 20px; min-height: 48px; font-size: 14px; font-weight: 500; }
+.evenstate .ev-text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.evenstate .ev-actions { display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center; }
+.evenstate .ev-skip { position: absolute; top: 12px; left: 20px; z-index: 10; padding: 12px 20px; background: #fff; color: var(--ev-primary); transform: translateY(-200%); }
+.evenstate .ev-skip:focus { transform: none; }
+.evenstate .ev-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 108px; border-bottom: 1px solid var(--ev-line); }
+.evenstate .ev-brand { display: inline-flex; align-items: center; gap: 11px; min-height: 48px; font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -.06em; }
+.evenstate .ev-brand img { border-radius: 10px; }
+.evenstate .ev-brand-by { display: block; font-size: 9px; line-height: 1.4; letter-spacing: .09em; font-weight: 400; color: var(--ev-muted); margin-top: 3px; }
+.evenstate .ev-nav { display: flex; gap: 36px; font-size: 13px; }
+.evenstate .ev-nav a, .evenstate .ev-footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.evenstate .ev-nav a:hover, .evenstate .ev-footer nav a:hover { color: var(--ev-primary); text-decoration: underline; text-underline-offset: 6px; }
+.evenstate .ev-header-cta { min-height: 44px; padding: 10px 21px; font-size: 12px; gap: 22px; }
+.evenstate .ev-hero { display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; min-height: 685px; padding-block: 70px 76px; }
+.evenstate .ev-hero-copy { position: relative; z-index: 1; }
+.evenstate .ev-hero h1 { max-width: 9.5em; }
+.evenstate .ev-hero h1 span { color: var(--ev-primary); }
+.evenstate .ev-hero .ev-lead { margin-top: 26px; max-width: 43ch; font-size: 17px; }
+.evenstate .ev-hero .ev-actions { margin-top: 32px; }
+.evenstate .ev-availability { font-size: 11px; line-height: 1.8; margin-top: 27px; }
+.evenstate .ev-hero-art { position: relative; align-self: stretch; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.evenstate .ev-hero-art img { position: relative; width: 112%; max-width: none; margin-left: -3%; }
+.evenstate .ev-hero-halo { position: absolute; inset: 4% -4% 8%; border-radius: 50%; background: radial-gradient(ellipse, #e5e9dd77, #ede4ed44 45%, #fcf9f300 70%); }
+.evenstate .ev-hero-art figcaption { display: flex; justify-content: space-between; margin: -32px 30px 0 40px; font-size: 10px; letter-spacing: .06em; color: var(--ev-muted); position: relative; }
+.evenstate .ev-intro-rule { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-block: 1px solid var(--ev-line); padding-block: 20px; font-size: 11px; color: var(--ev-muted); }
+.evenstate .ev-intro-rule > span:nth-child(2) { margin-left: auto; }
+.evenstate .ev-intro-rule .ev-arrow { margin-left: 28px; }
+.evenstate .ev-section-heading, .evenstate .ev-relief-top { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 70px; margin-bottom: 45px; }
+.evenstate .ev-section-heading > p, .evenstate .ev-relief-top > p { font-size: 16px; line-height: 1.85; max-width: 49ch; padding-bottom: 3px; }
+.evenstate .ev-daily-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.evenstate .ev-daily-panel { border-radius: 24px; overflow: hidden; padding: 30px 34px 34px; }
+.evenstate .ev-brain { background: linear-gradient(155deg, #f0edf7, #eae8f0 45%, #f8f7f3); }
+.evenstate .ev-body { background: linear-gradient(155deg, #e8efe8, #deeadf 45%, #f5f7f1); }
+.evenstate .ev-panel-top { display: flex; align-items: center; justify-content: space-between; color: var(--ev-primary); font-size: 14px; font-weight: 600; }
+.evenstate .ev-panel-symbol { font-size: 26px; font-weight: 400; }
+.evenstate .ev-sculpture-matte { width: min(100%, 330px); margin: 12px auto 28px; border-radius: 50% 50% 45% 45%; overflow: hidden; border: 6px solid #ffffff45; }
+.evenstate .ev-panel-copy h3 { font-size: 25px; margin-bottom: 15px; }
+.evenstate .ev-panel-copy p { font-size: 14px; line-height: 1.85; }
+.evenstate .ev-practice-list { display: flex; flex-direction: column; gap: 9px; list-style: none; padding: 20px 0 0; margin: 23px 0 0; border-top: 1px solid #1c1c181c; font-size: 12px; color: var(--ev-muted); }
+.evenstate .ev-practice-list li { display: flex; align-items: center; gap: 10px; }
+.evenstate .ev-practice-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--ev-primary); }
+.evenstate .ev-catalog-note { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 27px; font-size: 12px; text-align: center; }
+.evenstate .ev-how { display: grid; grid-template-columns: 1.08fr 1fr; gap: 100px; padding-top: 0; align-items: center; }
+.evenstate .ev-steps { padding: 0; margin: 39px 0 0; list-style: none; counter-reset: steps; }
+.evenstate .ev-steps li { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--ev-line); counter-increment: steps; }
+.evenstate .ev-steps li::before { content: '0' counter(steps); font-size: 11px; color: var(--ev-primary); padding-top: 5px; }
+.evenstate .ev-steps li:first-child { padding-top: 0; }
+.evenstate .ev-steps li:last-child { border: 0; padding-bottom: 0; }
+.evenstate .ev-steps h3 { font-size: 18px; margin-bottom: 9px; }
+.evenstate .ev-steps p { font-size: 13px; line-height: 1.85; }
+.evenstate .ev-steps .ev-step-detail { font-size: 11px; margin-top: 9px; }
+.evenstate .ev-routine-figure { padding: 38px 25px 25px; background: #f0eee8; border-radius: 25px; }
+.evenstate .ev-routine-sheet { background: #fffdf9; padding: 30px 25px; border-radius: 16px; border: 1px solid #e5e2dc; box-shadow: 0 8px 30px #24332e08; }
+.evenstate .ev-example-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--ev-primary); font-size: 12px; }
+.evenstate .ev-example-label { font-size: 9px; border: 1px solid #c1c8c2; border-radius: 4px; padding: 3px 6px; }
+.evenstate .ev-sheet-title { font-size: 24px; line-height: 1.4; letter-spacing: -.035em; color: var(--ev-ink); margin-top: 27px; }
+.evenstate .ev-example-totals { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-block: 26px; }
+.evenstate .ev-example-totals > div { display: flex; gap: 13px; align-items: center; font-size: 11px; }
+.evenstate .ev-example-totals strong { display: block; font-size: 24px; line-height: 1.5; font-weight: 500; color: var(--ev-ink); }
+.evenstate .ev-example-totals small { font-size: 8px; display: block; }
+.evenstate .ev-completion-orb { width: 48px; height: 58px; border-radius: 45%; flex: 0 0 auto; box-shadow: inset -5px -6px 9px #385c4b0c; }
+.evenstate .ev-orb-brain { background: radial-gradient(circle at 28% 25%, #f9f7fc, #cfc4df 75%); }
+.evenstate .ev-orb-body { background: radial-gradient(circle at 28% 25%, #f8faf6, #abc4b2 75%); }
+.evenstate .ev-example-records { list-style: none; padding: 0; margin: 0; }
+.evenstate .ev-example-records li { display: flex; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--ev-line); font-size: 12px; }
+.evenstate .ev-example-records small { display: block; color: var(--ev-muted); font-size: 10px; margin-top: 3px; }
+.evenstate .ev-check, .evenstate .ev-open-circle { display: inline-flex; justify-content: center; align-items: center; width: 22px; height: 22px; flex: 0 0 auto; border-radius: 50%; background: #e3eee6; color: var(--ev-primary); }
+.evenstate .ev-open-circle { background: transparent; border: 1px solid #c1c8c2; }
+.evenstate .ev-sheet-note { font-size: 10px; padding-top: 16px; margin-top: 8px; border-top: 1px solid var(--ev-line); }
+.evenstate .ev-routine-figure figcaption { font-size: 9px; line-height: 1.9; text-align: center; margin-top: 22px; color: var(--ev-muted); }
+.evenstate .ev-relief { background: #edf0e9; }
+.evenstate .ev-relief-top { margin-bottom: 34px; }
+.evenstate .ev-relief-explorer { margin-bottom: 48px; }
+.evenstate fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.evenstate legend { font-size: 11px; color: var(--ev-muted); margin-bottom: 14px; padding: 0; }
+.evenstate .ev-relief-choices { display: flex; flex-wrap: wrap; gap: 10px; }
+.evenstate .ev-relief-choices button { min-height: 46px; padding: 10px 25px; border: 1px solid #a6b2a8; border-radius: 50px; background: transparent; color: var(--ev-primary); font-size: 13px; cursor: pointer; transition: background 180ms, color 180ms; }
+.evenstate .ev-relief-choices button:hover { background: #dce5da; }
+.evenstate .ev-relief-choices button[aria-pressed='true'] { background: var(--ev-primary); border-color: var(--ev-primary); color: white; }
+.evenstate .ev-relief-suggestion { display: flex; gap: 18px; max-width: 720px; min-height: 145px; padding: 26px 0 0; }
+.evenstate .ev-suggestion-mark { font-size: 24px; color: var(--ev-primary); }
+.evenstate .ev-relief-suggestion h3 { font-size: 17px; margin-bottom: 8px; }
+.evenstate .ev-relief-suggestion p { font-size: 13px; line-height: 1.8; }
+.evenstate .ev-relief-story { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
+.evenstate .ev-relief-story figure { position: relative; }
+.evenstate .ev-relief-story img { border-radius: 16px; aspect-ratio: 1.35; object-fit: cover; }
+.evenstate .ev-relief-story figcaption { margin-top: 12px; font-size: 10px; color: var(--ev-muted); }
+.evenstate .ev-relief-story h3 { font-size: 31px; margin-block: 12px 22px; }
+.evenstate .ev-line-icon { color: var(--ev-primary); font-size: 48px; line-height: 1; }
+.evenstate .ev-relief-story p { font-size: 14px; line-height: 1.9; }
+.evenstate .ev-relief-story .ev-relief-options { margin-top: 24px; padding-top: 22px; border-top: 1px solid #cdd6cb; font-size: 12px; }
+.evenstate .ev-practice { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.evenstate .ev-practice .ev-lead { font-size: 16px; margin-top: 25px; }
+.evenstate .ev-practice-details > div { display: flex; gap: 23px; padding-block: 25px; border-bottom: 1px solid var(--ev-line); }
+.evenstate .ev-detail-number { padding-top: 3px; font-size: 11px; color: var(--ev-primary); }
+.evenstate .ev-practice-details h3 { font-size: 19px; margin-bottom: 11px; }
+.evenstate .ev-practice-details p { font-size: 14px; line-height: 1.8; }
+.evenstate .ev-practice-details .ev-connection-note { margin-top: 22px; font-size: 11px; }
+.evenstate .ev-closing { background: #e3eee6; padding-block: 80px 90px; text-align: center; }
+.evenstate .ev-closing-mark { font-size: 50px; line-height: 1; color: var(--ev-primary); }
+.evenstate .ev-closing .ev-eyebrow { justify-content: center; margin-top: 24px; margin-bottom: 20px; }
+.evenstate .ev-closing h2 { font-size: clamp(42px, 4.3vw, 62px); color: var(--ev-primary); }
+.evenstate .ev-closing p:not(.ev-eyebrow) { max-width: 49ch; margin: 24px auto 30px; font-size: 15px; }
+.evenstate .ev-closing .ev-actions { justify-content: center; }
+.evenstate .ev-footer { padding-block: 45px 24px; }
+.evenstate .ev-footer-top, .evenstate .ev-footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.evenstate .ev-footer nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 12px; }
+.evenstate .ev-footer nav .ev-arrow { font-size: 14px; margin-left: 5px; }
+.evenstate .ev-footer-bottom { border-top: 1px solid var(--ev-line); padding-top: 20px; margin-top: 30px; font-size: 10px; }
+.evenstate .ev-not-found { max-width: 650px; padding: 100px 24px; margin-inline: auto; }
+.evenstate .ev-not-found p { margin-block: 24px; }
+@media (max-width: 1050px) {
+  .evenstate .ev-container { width: calc(100% - 56px); }
+  .evenstate .ev-hero { min-height: 610px; }
+  .evenstate .ev-hero .ev-eyebrow { font-size: 9px; }
+  .evenstate .ev-hero-art img { width: 105%; }
+  .evenstate .ev-hero-art figcaption { margin-inline: 16px; font-size: 9px; }
+  .evenstate .ev-how, .evenstate .ev-practice { gap: 42px; }
+  .evenstate .ev-section-heading, .evenstate .ev-relief-top { gap: 42px; }
+  .evenstate .ev-daily-panel { padding: 24px; }
+  .evenstate .ev-relief-story { gap: 35px; }
+  .evenstate .ev-example-totals > div { gap: 7px; }
+  .evenstate .ev-completion-orb { width: 28px; height: 38px; }
+  .evenstate .ev-routine-figure { padding-inline: 15px; }
+  .evenstate .ev-routine-sheet { padding-inline: 18px; }
+}
+@media (max-width: 800px) {
+  .evenstate .ev-header { min-height: 92px; gap: 18px; }
+  .evenstate .ev-nav { gap: 22px; }
+  .evenstate .ev-header-cta { display: none; }
+  .evenstate .ev-hero { min-height: 580px; padding-block: 55px; }
+  .evenstate .ev-hero h1 { font-size: 46px; }
+  .evenstate .ev-hero .ev-lead { font-size: 15px; }
+  .evenstate .ev-hero .ev-actions { gap: 12px; }
+  .evenstate .ev-hero .ev-button { gap: 18px; padding-inline: 20px; }
+  .evenstate .ev-section { padding-block: 72px; }
+  .evenstate .ev-how { padding-top: 0; grid-template-columns: 1fr; gap: 40px; }
+  .evenstate .ev-how-copy { max-width: 620px; }
+  .evenstate .ev-routine-figure { width: min(100%, 470px); margin-inline: auto; padding: 30px; }
+  .evenstate .ev-routine-sheet { padding: 28px; }
+  .evenstate .ev-completion-orb { width: 48px; height: 58px; }
+  .evenstate .ev-panel-copy h3 { font-size: 22px; }
+  .evenstate .ev-practice { gap: 34px; }
+  .evenstate .ev-relief-story h3 { font-size: 26px; }
+}
+@media (max-width: 700px) {
+  .evenstate .ev-container { width: calc(100% - 40px); }
+  .evenstate .ev-header { flex-wrap: wrap; justify-content: center; padding-block: 19px 9px; gap: 8px; }
+  .evenstate .ev-brand { font-size: 21px; }
+  .evenstate .ev-header .ev-brand { margin-right: auto; }
+  .evenstate .ev-nav { gap: 21px; font-size: 11px; }
+  .evenstate .ev-nav a { min-height: 44px; }
+  .evenstate .ev-hero { grid-template-columns: 1fr; padding-block: 44px 32px; min-height: 0; }
+  .evenstate .ev-hero .ev-eyebrow { font-size: 9px; letter-spacing: .08em; margin-bottom: 21px; }
+  .evenstate .ev-hero h1 { font-size: clamp(43px, 10.3vw, 61px); max-width: 10em; }
+  .evenstate .ev-hero .ev-lead { font-size: 16px; margin-top: 24px; }
+  .evenstate .ev-hero .ev-actions { gap: 24px; margin-top: 25px; }
+  .evenstate .ev-availability { margin-top: 22px; }
+  .evenstate .ev-hero-art { margin-top: -15px; }
+  .evenstate .ev-hero-art img { width: 100%; max-width: 480px; margin-inline: auto; }
+  .evenstate .ev-hero-art figcaption { margin: -23px 8px 0; font-size: 9px; }
+  .evenstate .ev-hero-halo { inset-inline: 0; }
+  .evenstate .ev-intro-rule { gap: 10px; font-size: 9px; align-items: start; }
+  .evenstate .ev-intro-rule > span { max-width: 40%; }
+  .evenstate .ev-intro-rule .ev-arrow { margin: 0; }
+  .evenstate .ev-section { padding-block: 65px; }
+  .evenstate .ev-section-heading, .evenstate .ev-relief-top { grid-template-columns: 1fr; gap: 23px; margin-bottom: 32px; }
+  .evenstate .ev-section-heading > p, .evenstate .ev-relief-top > p { font-size: 15px; }
+  .evenstate .ev-eyebrow { margin-bottom: 17px; font-size: 10px; }
+  .evenstate .ev-daily-pair { grid-template-columns: 1fr; gap: 20px; }
+  .evenstate .ev-daily-panel { padding: 24px; }
+  .evenstate .ev-sculpture-matte { width: 85%; max-width: 300px; }
+  .evenstate .ev-panel-copy h3 { font-size: 24px; }
+  .evenstate .ev-catalog-note { font-size: 11px; align-items: baseline; line-height: 1.9; }
+  .evenstate .ev-how { padding-top: 0; }
+  .evenstate .ev-routine-figure { padding: 24px 16px; }
+  .evenstate .ev-routine-sheet { padding: 24px 18px; }
+  .evenstate .ev-sheet-title { font-size: 23px; }
+  .evenstate .ev-example-totals { gap: 10px; }
+  .evenstate .ev-completion-orb { width: 34px; height: 46px; }
+  .evenstate .ev-relief-choices { gap: 8px; }
+  .evenstate .ev-relief-choices button { padding-inline: 18px; font-size: 12px; }
+  .evenstate .ev-relief-suggestion { min-height: 192px; }
+  .evenstate .ev-relief-explorer { margin-bottom: 26px; }
+  .evenstate .ev-relief-story { grid-template-columns: 1fr; gap: 29px; }
+  .evenstate .ev-relief-story img { aspect-ratio: 1.2; }
+  .evenstate .ev-relief-story h3 { font-size: 29px; }
+  .evenstate .ev-practice { grid-template-columns: 1fr; gap: 20px; }
+  .evenstate .ev-practice-details > div { gap: 18px; }
+  .evenstate .ev-closing { padding-block: 60px; }
+  .evenstate .ev-closing .ev-actions { flex-direction: column; gap: 15px; }
+  .evenstate .ev-closing p:not(.ev-eyebrow) { font-size: 14px; }
+  .evenstate .ev-footer-top { flex-direction: column; align-items: start; gap: 22px; }
+  .evenstate .ev-footer nav { gap: 20px; font-size: 11px; }
+  .evenstate .ev-footer-bottom { align-items: start; flex-direction: column; gap: 14px; }
+}
+@media (max-width: 380px) {
+  .evenstate .ev-header .ev-brand { margin: 0; }
+  .evenstate .ev-nav { width: 100%; justify-content: space-between; }
+  .evenstate .ev-hero h1 { font-size: 43px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.evenstate { scroll-behavior: auto; }
+  .evenstate *, .evenstate *::before, .evenstate *::after { animation: none !important; transition: none !important; }
 }

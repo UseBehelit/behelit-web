@@ -1,0 +1,54 @@
+{
+  "mobileCommit": "975162c882e924c8af63d54c2e3022ffd4b75a6d",
+  "artwork": [
+    {
+      "source": "assets/onboarding/daily.png",
+      "destination": "public/evenstate/assets/hero-brain-body.webp",
+      "sourceFormat": "png",
+      "width": 1254,
+      "height": 1254,
+      "sourceSha256": "1cd623d05ae7552d63eaf723a2b5233c801c9418c45fdad4e7541d4b2e94a10f",
+      "sourceBytes": 980201,
+      "outputBytes": 114760
+    },
+    {
+      "source": "assets/stitch/7fabd0e81ac3.png",
+      "destination": "public/evenstate/assets/brain-sculpture.webp",
+      "sourceFormat": "jpeg",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "ee5b107c9925d72a220b0238c83c82b99bd1a8b8ca4876a746c2bc5dce6a4921",
+      "sourceBytes": 52601,
+      "outputBytes": 16458
+    },
+    {
+      "source": "assets/stitch/b09323a37c50.png",
+      "destination": "public/evenstate/assets/body-sculpture.webp",
+      "sourceFormat": "jpeg",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "a05282b6b905e1b2bf5b90237d1ea1e91611d1e9ac777cdf7790d24f01bc0652",
+      "sourceBytes": 50278,
+      "outputBytes": 12808
+    },
+    {
+      "source": "assets/relief/detail/stress.png",
+      "destination": "public/evenstate/assets/relief-dunes.webp",
+      "sourceFormat": "png",
+      "width": 1536,
+      "height": 1024,
+      "sourceSha256": "3d6bc4b30ca799c2d948b96976f7d8f1a2831e72dae1b435e2b7c5b863c7feb4",
+      "sourceBytes": 2047109,
+      "outputBytes": 105668
+    }
+  ],
+  "icon": {
+    "source": "assets/icons/evenstate-icon.png",
+    "outputs": [
+      "public/evenstate/assets/icon-32.png",
+      "public/evenstate/assets/icon-64.png",
+      "public/evenstate/assets/icon-180.png"
+    ]
+  },
+  "social": "New 1200×630 composition made with Next ImageResponse, the authorized onboarding artwork, and licensed Plus Jakarta Sans."
+}
